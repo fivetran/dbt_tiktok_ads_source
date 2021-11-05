@@ -1,0 +1,13 @@
+name: 'tiktok_ads_source'
+version: '0.1.0'
+config-version: 1
+require-dbt-version: ">=0.20.0"
+
+vars: 
+
+models: 
+  tiktok_ads_source:
+    +materialized: table
+    +schema: stg_tiktok_ads
+    tmp:
+      +materialized: view
