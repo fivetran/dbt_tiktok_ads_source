@@ -18,11 +18,274 @@ sources:
         columns:
           - name: id
             description: Unique identifier for the object. 
+          - name: address
+            description:
+          - name: balance
+            description:
+          - name: company
+            description:
+          - name: contracter
+            description:
+          - name: country
+            description:
+          - name: create_time
+            description:
+          - name: currency
+            description:
+          - name: description
+            description:
+          - name: email
+            description:
+          - name: industry
+            description:
+          - name: language
+            description:
+          - name: license_no
+            description:
+          - name: license_url
+            description:
+          - name: name
+            description:
+          - name: phone_number
+            description:
+          - name: promotion_area
+            description:
+          - name: reason
+            description:
+          - name: role
+            description:
+          - name: status
+            description:
+          - name: telephone
+            description:
+          - name: timezone
+            description:
 
       - name: campaign_history
+        description:
+        columns:
+          - name: campaign_id
+            description: 
+          - name: updated_at
+            description: 
+          - name: advertiser_id
+            description: 
+          - name: budget
+            description: 
+          - name: budget_mode
+            description: 
+          - name: campaign_name
+            description: 
+          - name: campaign_type
+            description: 
+          - name: create_time
+            description: 
+          - name: is_new_structure
+            description: 
+          - name: objective_type
+            description: 
+          - name: opt_status
+            description: 
+          - name: status
+            description: 
+          - name: split_test_variable
+            description: 
 
-      - name: adgroup_history 
+
+      - name: ad_group_history 
+        description:
+        columns:
+          - name: adgroup_id
+            description:
+          - name: updated_at
+            description:
+          - name: advertiser_id
+            description:
+          - name: campaign_id
+            description:
+          - name: action_categories
+            description:
+          - name: action_days
+            description:
+          - name: adgroup_name
+            description:
+          - name: age
+            description:
+          - name: android_osv
+            description:
+          - name: app_download_url
+            description:
+          - name: app_id
+            description:
+          - name: app_name
+            description:
+          - name: app_type
+            description:
+          - name: audience
+            description:
+          - name: audience_type
+            description:
+          - name: bid
+            description:
+          - name: bid_type
+            description:
+          - name: billing_event
+            description:
+          - name: budget
+            description:
+          - name: budget_mode
+            description:
+          - name: carriers
+            description:
+          - name: category
+            description:
+          - name: click_tracking_url
+            description:
+          - name: connection_type
+            description:
+          - name: conversion_bid
+            description:
+          - name: cpv_video_duration
+            description:
+          - name: creative_material_mode
+            description:
+          - name: dayparting
+            description:
+          - name: deep_bid_type
+            description:
+          - name: deep_cpabid
+            description:
+          - name: deep_external_action
+            description:
+          - name: display_name
+            description:
+          - name: enable_inventory_filter
+            description:
+          - name: excluded_audience
+            description:
+          - name: external_action
+            description:
+          - name: fallback_type
+            description:
+          - name: frequency
+            description:
+          - name: frequency_schedule
+            description:
+          - name: gender
+            description:
+          - name: impression_tracking_url
+            description:
+          - name: interest_category_v2
+            description:
+          - name: ios_osv
+            description:
+          - name: is_comment_disable
+            description:
+          - name: is_hfss
+            description:
+          - name: is_new_structure
+            description:
+          - name: keywords
+            description:
+          - name: landing_page_url
+            description:
+          - name: languages
+            description:
+          - name: location
+            description:
+          - name: open_url
+            description:
+          - name: open_url_type
+            description:
+          - name: operation_system
+            description:
+          - name: opt_status
+            description:
+          - name: optimize_goal
+            description:
+          - name: pacing
+            description:
+          - name: package
+            description:
+          - name: pangle_block_app_list_id
+            description:
+          - name: pixel_id
+            description:
+          - name: placement
+            description:
+          - name: placement_type
+            description:
+          - name: profile_image
+            description:
+          - name: schedule_end_time
+            description:
+          - name: schedule_start_time
+            description:
+          - name: schedule_type
+            description:
+          - name: skip_learning_phase
+            description:
+          - name: statistic_type
+            description:
+          - name: status
+            description:
+          - name: video_actions
+            description:
+          - name: video_download
+            description:
+
 
       - name: ad_history 
+        description:
+        columns:
+          - name: ad_id
+            description: 
+          - name: updated_at
+            description: 
+          - name: adgroup_id
+            description: 
+          - name: advertiser_id
+            description: 
+          - name: campaign_id
+            description: 
+          - name: ad_name
+            description: 
+          - name: ad_text
+            description: 
+          - name: app_name
+            description: 
+          - name: call_to_action
+            description: 
+          - name: click_tracking_url
+            description: 
+          - name: create_time
+            description: 
+          - name: display_name
+            description: 
+          - name: image_ids
+            description: 
+          - name: impression_tracking_url
+            description: 
+          - name: is_aco
+            description: 
+          - name: is_creative_authorized
+            description: 
+          - name: is_new_structure
+            description: 
+          - name: landing_page_url
+            description: 
+          - name: open_url
+            description: 
+          - name: opt_status
+            description: 
+          - name: playable_url
+            description: 
+          - name: profile_image
+            description: 
+          - name: status
+            description: 
+          - name: video_id
+            description: 
+
 
   
