@@ -1,6 +1,6 @@
 name: 'tiktok_ads_source'
 version: '0.1.0'
-config-version: 1
+config-version: 2
 require-dbt-version: ">=0.20.0"
 
 vars: 
@@ -11,3 +11,10 @@ models:
     +schema: stg_tiktok_ads
     tmp:
       +materialized: view
+
+vars:
+  stripe:
+    ad_group_history: "{{ source('tiktok_ads', 'ad_group_history') }}"
+    ad_history: "{{ source('tiktok_ads', 'ad_history') }}"
+    advertiser: "{{ source('tiktok_ads', 'advertiser') }}"
+    campaign_history: "{{ source('tiktok_ads', 'campaign_history') }}"
