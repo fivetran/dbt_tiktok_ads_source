@@ -18,7 +18,7 @@ with base as (
 
     select 
         *,
-        {{ dbt_utils.surrogate_key(['ad_group_id','_fivetran_synced'] )}} as version_id
+        {{ dbt_utils.surrogate_key(['adgroup_id','_fivetran_synced'] )}} as version_id
     from fields
 
 )
