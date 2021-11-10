@@ -1,0 +1,15 @@
+# add tests
+
+version: 1
+
+models:
+  - name: advertiser
+    description:
+    columns:
+      - name: advertiser_id
+        description: 
+      - name: version_id
+        description:
+        tests:
+          - unique
+          - not_null
