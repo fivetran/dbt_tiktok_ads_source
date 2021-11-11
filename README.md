@@ -43,10 +43,6 @@ vars:
     tiktok_schema: your_schema_name 
 ```
 
-### Passthrough Columns (?)
-
-```
-
 ### Changing the Build Schema
 By default this package will build the TikTok Ads staging models within a schema titled (<target_schema> + `_stg_tiktok`) in your target database. If this is not where you would like your TikTok Ads staging data to be written to, add the following configuration to your `dbt_project.yml` file:
 
