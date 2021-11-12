@@ -3,10 +3,43 @@
 version: 1
 
 models:
-  - name: advertiser
+  - name: stg_tiktok_ads__advertiser
     description:
     columns:
       - name: advertiser_id
+        description: 
+      - name: version_id
+        description:
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_tiktok_ads___ad_group_history
+    description:
+    columns:
+      - name: adgroup_id
+        description: 
+      - name: version_id
+        description:
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_tiktok_ads__ad_history
+    description:
+    columns:
+      - name: ad_id
+        description: 
+      - name: version_id
+        description:
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_tiktok_ads__campaign_history
+    description:
+    columns:
+      - name: campaign_id
         description: 
       - name: version_id
         description:
