@@ -14,18 +14,36 @@ with base as (
         }}
     from base
 
-), surrogate_key as (
+), final as (
 
     select 
-        id as advertiser_id, 
+          id as advertiser_id
+        , address
+        , balance
+        , company
+        , contacter
+        , country
+        , create_time
+        , currency
+        , description
+        , email
+        , industry
+        , language
+        , license_no
+        , license_url
+        , name
+        , phone_number
+        , promotion_area
+        , reason
+        , role
+        , status
+        , telephone
+        , timezone
 
-
-        
-        *,
-        {{ dbt_utils.surrogate_key(['advertiser_id','_fivetran_synced'] )}} as version_id
+        , {{ dbt_utils.surrogate_key(['advertiser_id','_fivetran_synced'] )}} as version_id
     from fields
 
 )
 
 select *
-from surrogate_key
+from final

@@ -14,14 +14,38 @@ with base as (
         }}
     from base
 
-), surrogate_key as (
+), final as (
 
     select 
-        *,
-        {{ dbt_utils.surrogate_key(['ad_id','_fivetran_synced'] )}} as version_id
+          ad_id
+        , updated_at
+        , adgroup_id
+        , advertiser_id
+        , campaign_id
+        , ad_name
+        , ad_text
+        , app_name
+        , call_to_action
+        , click_tracking_url
+        , impression_tracking_url
+        , landing_page_url
+        , open_url
+        , create_time
+        , display_name
+        , image_ids
+        , is_aco
+        , is_creative_authorized
+        , is_new_structure
+        , opt_status
+        , playable_url
+        , profile_image
+        , status
+        , video_id
+        
+        , {{ dbt_utils.surrogate_key(['ad_id','_fivetran_synced'] )}} as version_id
     from fields
 
 )
 
 select *
-from surrogate_key
+from final
