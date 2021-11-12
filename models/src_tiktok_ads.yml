@@ -67,7 +67,7 @@ sources:
           - name: campaign_id
             description: Campaign ID
           - name: updated_at
-            description: 
+            description: Time the record was updated.
           - name: advertiser_id
             description: Advertiser ID
           - name: budget
@@ -98,7 +98,7 @@ sources:
           - name: adgroup_id
             description: Ad group ID
           - name: updated_at
-            description:
+            description: Time the record was updated.
           - name: advertiser_id
             description: Advertiser ID
           - name: campaign_id
@@ -120,7 +120,7 @@ sources:
           - name: app_name
             description: App name. 
           - name: app_type
-            description:
+            description: App type. 
           - name: audience
             description: A list of audience ID
           - name: audience_type
@@ -138,7 +138,7 @@ sources:
           - name: carriers
             description: Carriers that you want to target. 
           - name: category
-            description:
+            description: Ad group category.
           - name: click_tracking_url
             description: Click monitoring URL.
           - name: connection_type
@@ -146,12 +146,13 @@ sources:
           - name: conversion_bid
             description: oCPM conversion bid
           - name: cpv_video_duration
-            description: Video playback duration, required if optimize_goal is VIDEO_VIEW. Allowed values; SIX_SECONDS (video playback 6s), TWO_SECONDS (video playback 2s)
+            description: Video playback duration, required if optimize_goal is VIDEO_VIEW. >
+             Allowed values; SIX_SECONDS (video playback 6s), TWO_SECONDS (video playback 2s)
           - name: creative_material_mode
             description: Creative delivery mode.
           - name: dayparting
-            description: Ad delivery period, the default is always and the format is 48 * 7 character string, represented by 0 or 1.
-That is, with half an hour as the minimum granularity, a day (24 hours) is divided by the minimum granularity(30 mins) from Monday to Sunday. Resulting in a 48*7 format.0 represents not to be delivered, 1 represents delivery. no transmission, full transmission 0, full transmission 1 all represent full time delivery
+            description: Ad delivery period, the default is always and the format is 48 * 7 character string, represented by 0 or 1. >
+              That is, with half an hour as the minimum granularity, a day (24 hours) is divided by the minimum granularity(30 mins) from Monday to Sunday. Resulting in a 48*7 format.0 represents not to be delivered, 1 represents delivery. no transmission, full transmission 0, full transmission 1 all represent full time delivery
           - name: deep_bid_type
             description: Bidding strategy for in-app events. 
           - name: deep_cpabid
@@ -159,7 +160,7 @@ That is, with half an hour as the minimum granularity, a day (24 hours) is divid
           - name: deep_external_action
             description: Deep conversion event. 
           - name: display_name
-            description:
+            description: Display name of ad group.
           - name: enable_inventory_filter
             description: Inventory filtering (Unsafe videos will not be displayed).
           - name: excluded_audience
@@ -167,15 +168,17 @@ That is, with half an hour as the minimum granularity, a day (24 hours) is divid
           - name: external_action
             description: Conversion event for the ad group. It is required when the promoted object is an app with tracking urls, or when pixel_id is specified. 
           - name: fallback_type
-            description:
+            description: Fallback Type. If the audience do not have the app installed, you can have them fall back to install the app, or to view a specific web page. >
+              Not applicable for Deferred Deeplink. Allowed values; APP_INSTALL, WEBSITE, UNSET. If website is chosen, you need to specify the url via landing_page_url field.
           - name: frequency
-            description: frequency, together with frequency_schedule, controls how often people see your ad (only available for REACH ads). For example, frequency = 2 frequency_schedule = 3 means "show ads no more than twice every 3 day".
+            description: frequency, together with frequency_schedule, controls how often people see your ad (only available for REACH ads). >
+              For example, frequency = 2 frequency_schedule = 3 means "show ads no more than twice every 3 day".
           - name: frequency_schedule
             description: frequency, together with frequency, controls how often people see your ad (only available for REACH ads).
           - name: gender
             description: Gender that you want to target. 
           - name: impression_tracking_url
-            description:
+            description: Display monitoring URL. 
           - name: interest_category_v2
             description: Interest classification. If the interest is specified, users that do not meet interest target will be excluded during delivery.
           - name: ios_osv
@@ -187,9 +190,9 @@ That is, with half an hour as the minimum granularity, a day (24 hours) is divid
           - name: is_new_structure
             description: Whether the campaign is a new structure.
           - name: keywords
-            description:
+            description: Keywords used.
           - name: landing_page_url
-            description:
+            description: Landing page URL.
           - name: languages
             description: Codes of the languages that you want to target.
           - name: location
@@ -205,9 +208,10 @@ That is, with half an hour as the minimum granularity, a day (24 hours) is divid
           - name: optimize_goal
             description: Optimization goal.
           - name: pacing
-            description: You can choose between PACING_MODE_SMOOTH and PACING_MODE_FAST. For PACING_MODE_SMOOTH, the budget is allocated evenly within the scheduled time. PACING_MODE_FAST would consume budget and produce results as soon as possible. 
+            description: You can choose between PACING_MODE_SMOOTH and PACING_MODE_FAST. For PACING_MODE_SMOOTH, the budget is allocated evenly within the scheduled time. >
+              PACING_MODE_FAST would consume budget and produce results as soon as possible. 
           - name: package
-            description:
+            description: Package name.
           - name: pangle_block_app_list_id
             description: Pangle app block list ID. 
           - name: pixel_id
@@ -231,7 +235,7 @@ That is, with half an hour as the minimum granularity, a day (24 hours) is divid
           - name: status
             description: Ad group status
           - name: video_actions
-            description: 
+            description: Number of video actions.
           - name: video_download
             description: Whether users can download your video ads on TikTok(cannot be updated once created). 
 
@@ -242,7 +246,7 @@ That is, with half an hour as the minimum granularity, a day (24 hours) is divid
           - name: ad_id
             description: Ad ID
           - name: updated_at
-            description: 
+            description: Time the record was updated.
           - name: adgroup_id
             description: Ad group ID
           - name: advertiser_id
@@ -270,7 +274,8 @@ That is, with half an hour as the minimum granularity, a day (24 hours) is divid
           - name: is_aco
             description: Whether the ad is an automated ad. 
           - name: is_creative_authorized
-            description: Whether you grant displaying some of your ads in our TikTok For Business Creative Center. Only valid for non-US advertisers, the default value is false.
+            description: Whether you grant displaying some of your ads in our TikTok For Business Creative Center. >
+              Only valid for non-US advertisers, the default value is false.
           - name: is_new_structure
             description: Whether the campaign is a new structure.
           - name: landing_page_url
