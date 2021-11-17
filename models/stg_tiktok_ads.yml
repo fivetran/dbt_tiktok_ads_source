@@ -5,44 +5,64 @@ version: 1
 models:
   - name: stg_tiktok_ads__advertiser
     description:
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - advertiser_id
+            - _fivetran_synced 
     columns:
       - name: advertiser_id
         description: 
-      - name: version_id
-        description:
-        tests:
-          - unique
-          - not_null
+      - name: _fivetran_synced
+        description: "{{ doc('_fivetran_synced') }}"
+      - name: is_most_recent_record
+        description: "{{ doc('is_most_recent_record') }}"
+          
 
-  - name: stg_tiktok_ads___ad_group_history
+  - name: stg_tiktok_ads__ad_group_history
     description:
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of+columns:
+            - adgroup_id
+            - _fivetran_synced
     columns:
       - name: adgroup_id
         description: 
-      - name: version_id
-        description:
-        tests:
-          - unique
-          - not_null
+      - name: _fivetran_synced
+        description: "{{ doc('_fivetran_synced') }}"
+      - name: is_most_recent_record
+        description: "{{ doc('is_most_recent_record') }}"
+          
 
   - name: stg_tiktok_ads__ad_history
     description:
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of+columns:
+            - ad_id
+            - _fivetran_synced
     columns:
       - name: ad_id
         description: 
-      - name: version_id
-        description:
-        tests:
-          - unique
-          - not_null
+      - name: _fivetran_synced
+        description: "{{ doc('_fivetran_synced') }}"
+      - name: is_most_recent_record
+        description: "{{ doc('is_most_recent_record') }}"
+          
 
   - name: stg_tiktok_ads__campaign_history
     description:
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of+columns:
+            - campaign_id
+            - _fivetran_synced
     columns:
       - name: campaign_id
         description: 
-      - name: version_id
-        description:
-        tests:
-          - unique
-          - not_null
+      - name: _fivetran_synced
+        description: "{{ doc('_fivetran_synced') }}"
+      - name: is_most_recent_record
+        description: "{{ doc('is_most_recent_record') }}"
+          
