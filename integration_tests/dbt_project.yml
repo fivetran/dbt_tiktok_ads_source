@@ -1,10 +1,10 @@
-name: 'tiktok_source_integration_tests'
+name: 'tiktok_ads_source_integration_tests'
 version: '0.1.0'
 profile: 'integration_tests'
 config-version: 2
 
 vars: 
-  xero_source:
+  tiktok_ads_source:
     ad_group_history: "{{ ref('tiktok_ad_group_history') }}"
     ad_history: "{{ ref('tiktok_ad_history') }}"
     advertiser: "{{ ref('tiktok_advertiser') }}"

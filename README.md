@@ -25,7 +25,7 @@ Include in your `packages.yml`
 
 ```yaml
 packages:
-  - package: fivetran/tiktok_source
+  - package: fivetran/tiktok_ads_source
     version: [">=0.1.0", "<0.2.0"]
 ```
 
@@ -39,19 +39,19 @@ By default, this package will look for your TikTok Ads data in the `tiktok_ads` 
 config-version: 2
 
 vars:
-    tiktok_database: your_database_name
-    tiktok_schema: your_schema_name 
+    tiktok_database: tiktok_ads_database
+    tiktok_schema: tiktok_ads_schema
 ```
 
 ### Changing the Build Schema
-By default this package will build the TikTok Ads staging models within a schema titled (<target_schema> + `_stg_tiktok`) in your target database. If this is not where you would like your TikTok Ads staging data to be written to, add the following configuration to your `dbt_project.yml` file:
+By default this package will build the TikTok Ads staging models within a schema titled (<target_schema> + `_stg_tiktok_ads`) in your target database. If this is not where you would like your TikTok Ads staging data to be written to, add the following configuration to your `dbt_project.yml` file:
 
 ```yml
 # dbt_project.yml
 
 ...
 models:
-    tiktok_source:
+    tiktok_ads_source:
       +schema: my_new_schema_name # leave blank for just the target_schema
 ```
 ## Database Support
