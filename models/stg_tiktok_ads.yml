@@ -1,68 +1,110 @@
 # add tests
 
-version: 1
+version: 2
 
 models:
   - name: stg_tiktok_ads__advertiser
-    description:
+    description: replace
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - advertiser_id
             - _fivetran_synced 
     columns:
-      - name: advertiser_id
-        description: 
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
-      - name: is_most_recent_record
-        description: "{{ doc('is_most_recent_record') }}"
+      - name: id
+        description: Advertiser ID
+      - name: address
+        description: Advertiser address information
+      - name: balance
+        description: Account available balance
+      - name: company
+        description: Advertiser's company name
+      - name: contracter
+        description: Contact Person
+      - name: country
+        description: The advertiser's country
+      - name: create_time
+        description: Advertiser's create time
+      - name: currency
+        description: Type of currency used by advertisers
+      - name: description
+        description: Brand description, i.e. promotional content
+      - name: email
+        description: Advertiser contact email, desensitised data
+      - name: industry
+        description: Advertiser industry category
+      - name: language
+        description: Language used by advertisers
+      - name: license_no
+        description: License number
+      - name: license_url
+        description: License preview address, the link is valid for an hour by default.
+      - name: name
+        description: Advertiser name
+      - name: phone_number
+        description: Contact mobile number, desensitised data
+      - name: promotion_area
+        description: Operation area
+      - name: reason 
+        description: Reason for rejection
+      - name: role
+        description: Advertiser role
+      - name: status
+        description: Advertiser status
+      - name: telephone
+        description: Fixed phone number, desensitised data
+      - name: timezone
+        description: Ad account time zone including GMT offset
+      # - name: _fivetran_synced
+      #   description: "{{ doc('_fivetran_synced') }}"
+      # - name: is_most_recent_record
+      #   description: "{{ doc('is_most_recent_record') }}"
           
 
   - name: stg_tiktok_ads__ad_group_history
-    description:
+    description: replace
     tests:
       - dbt_utils.unique_combination_of_columns:
-          combination_of+columns:
+          combination_of_columns:
             - adgroup_id
             - _fivetran_synced
     columns:
       - name: adgroup_id
-        description: 
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
-      - name: is_most_recent_record
-        description: "{{ doc('is_most_recent_record') }}"
+        description: replace
+      # - name: _fivetran_synced
+      #   description: "{{ doc('_fivetran_synced') }}"
+      # - name: is_most_recent_record
+      #   description: "{{ doc('is_most_recent_record') }}"
           
 
   - name: stg_tiktok_ads__ad_history
-    description:
+    description: replace
     tests:
       - dbt_utils.unique_combination_of_columns:
-          combination_of+columns:
+          combination_of_columns:
             - ad_id
             - _fivetran_synced
     columns:
       - name: ad_id
-        description: 
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
-      - name: is_most_recent_record
-        description: "{{ doc('is_most_recent_record') }}"
+        description: replace
+      # - name: _fivetran_synced
+      #   description: "{{ doc('_fivetran_synced') }}"
+      # - name: is_most_recent_record
+      #   description: "{{ doc('is_most_recent_record') }}"
           
 
   - name: stg_tiktok_ads__campaign_history
-    description:
+    description: replace
     tests:
       - dbt_utils.unique_combination_of_columns:
-          combination_of+columns:
+          combination_of_columns:
             - campaign_id
             - _fivetran_synced
     columns:
       - name: campaign_id
-        description: 
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
-      - name: is_most_recent_record
-        description: "{{ doc('is_most_recent_record') }}"
+        description: replace
+      # - name: _fivetran_synced
+      #   description: "{{ doc('_fivetran_synced') }}"
+      # - name: is_most_recent_record
+      #   description: "{{ doc('is_most_recent_record') }}"
           

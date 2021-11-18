@@ -1,4 +1,4 @@
-version: 1
+version: 2
 
 sources:
   - name: tiktok_ads
@@ -88,7 +88,7 @@ sources:
             description: Split Test variables. Optional values; TARGETING, BIDDING_OPTIMIZATION , CREATIVE.
 
 
-      - name: ad_group_history 
+      - name: adgroup_history 
         description: Each record represents a version of a TikTok ad group.
         columns:
           - name: adgroup_id
@@ -102,7 +102,7 @@ sources:
           - name: action_categories
             description: IDs of the action categories (behaviors) that you want to target. 
           - name: action_days
-            description:
+            description: replace
           - name: adgroup_name
             description: Ad group name. Character limit is 512 and cannot contain emoji.
           - name: age
