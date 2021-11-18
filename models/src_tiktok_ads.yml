@@ -118,7 +118,7 @@ sources:
           - name: app_type
             description: App type. 
           - name: audience
-            description: A list of audience ID
+            description: A list of audience IDs.
           - name: audience_type
             description: Audience Type
           - name: bid
