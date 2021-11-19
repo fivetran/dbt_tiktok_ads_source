@@ -37,7 +37,6 @@ final as (
         open_url,
         create_time,
         display_name,
-        image_ids,
         is_aco,
         is_creative_authorized,
         is_new_structure,

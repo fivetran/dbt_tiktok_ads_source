@@ -11,7 +11,7 @@ fields as (
         {{
             fivetran_utils.fill_staging_columns(
                 source_columns=adapter.get_columns_in_relation(ref('stg_tiktok_ads__campaign_history_tmp')),
-                staging_columns=get_campaign_columns()
+                staging_columns=get_campaign_history_columns()
             )
         }}
         
@@ -33,7 +33,7 @@ final as (
         is_new_structure, 
         objective_type, 
         opt_status, 
-        status, 
+        status,  -- there isn't a status column in the source 
         split_test_variable,
         _fivetran_synced
 
