@@ -108,3 +108,20 @@ models:
       # - name: is_most_recent_record
       #   description: "{{ doc('is_most_recent_record') }}"
           
+  - name: stg_tiktok_ads__ad_report_daily
+    description: replace
+
+  - name: stg_tiktok_ads__ad_report_hourly
+    description: replace
+
+  - name: stg_tiktok_ads__adgroup_report_daily
+    description: replace
+
+  - name: stg_tiktok_ads__adgroup_report_hourly
+    description: replace
+
+  - name: stg_tiktok_ads__campaign_report_daily
+    description: replace
+
+  - name: stg_tiktok_ads__campaign_report_hourly
+    description: replace

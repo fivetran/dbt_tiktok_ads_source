@@ -289,4 +289,26 @@ sources:
           - name: video_id
             description: The video ID.
 
+      - name: ad_report_hourly
+        # description: 
+        # columns:
 
+      - name: ad_report_daily
+        # description: 
+        # columns:
+
+      - name: campaign_report_daily
+        # description: 
+        # columns:
+
+      - name: campaign_report_hourly
+        # description: 
+        # columns:
+
+      - name: adgroup_report_daily
+        # description: 
+        # columns:
+
+      - name: adgroup_report_hourly
+        # description: 
+        # columns:
