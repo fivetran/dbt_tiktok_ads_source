@@ -5,14 +5,14 @@ config-version: 2
 
 vars: 
   tiktok_ads_source:
-    ad_group_history: "{{ ref('adgroup_history') }}"
+    adgroup_history: "{{ ref('adgroup_history') }}"
     ad_history: "{{ ref('ad_history') }}"
     advertiser: "{{ ref('advertiser') }}"
     campaign_history: "{{ ref('campaign_history') }}"
     ad_report_daily: "{{ ref('ad_report_daily') }}"
     ad_report_hourly: "{{ ref('ad_report_hourly') }}"
-    adgroup_daily: "{{ ref('adgroup_daily') }}"
-    adgroup_hourly: "{{ ref('adgroup_hourly') }}"
+    adgroup_daily: "{{ ref('adgroup_report_daily') }}"
+    adgroup_hourly: "{{ ref('adgroup_report_hourly') }}"
     campaign_report_daily: "{{ ref('campaign_report_daily') }}"
     campaign_report_hourly: "{{ ref('campaign_report_hourly') }}"
 
