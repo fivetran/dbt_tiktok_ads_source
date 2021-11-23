@@ -20,6 +20,6 @@ vars:
 seeds:
   +quote_columns: "{{ true if target.type == 'redshift' else false }}"
 
-dispatch:
-  - macro_namespace: dbt_utils
-    # search_order: ['spark_utils', 'dbt_utils']
+# dispatch:
+#   - macro_namespace: dbt_utils
+#     search_order: ['spark_utils', 'dbt_utils']
