@@ -102,7 +102,7 @@ sources:
           - name: action_categories
             description: IDs of the action categories (behaviors) that you want to target. 
           - name: action_days
-            description: replace
+            description: The number of days of the time period to include action from.
           - name: adgroup_name
             description: Ad group name. Character limit is 512 and cannot contain emoji.
           - name: age
