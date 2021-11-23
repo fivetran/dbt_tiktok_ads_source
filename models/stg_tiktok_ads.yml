@@ -4,7 +4,7 @@ version: 2
 
 models:
   - name: stg_tiktok_ads__advertiser
-    description: replace
+    description: Each record represents data for each advertiser.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -62,13 +62,13 @@ models:
           
 
   - name: stg_tiktok_ads__ad_group_history
-    description: replace
+    description: Each record represents data for each ad group.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - ad_group_id
-            - _fivetran_synced
-     columns:
+            - _fivetran_synced 
+    columns:
       - name: ad_group_id
         description: Ad group ID
       - name: updated_at
@@ -219,7 +219,7 @@ models:
           
 
   - name: stg_tiktok_ads__ad_history
-    description: replace
+    description: Each record represents data for each ad.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -298,7 +298,7 @@ models:
           
 
   - name: stg_tiktok_ads__campaign_history
-    description: replace
+    description: Each record represents data for each campaign.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -337,7 +337,7 @@ models:
       #   description: "{{ doc('is_most_recent_record') }}"
           
   - name: stg_tiktok_ads__ad_report_daily
-    description: replace
+    description: Each record represents data for each ad for each day.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -345,9 +345,9 @@ models:
             - _fivetran_synced 
     columns:
       - name: ad_id
-        description: 
+        description: Ad id
       - name: stat_time_day
-        description:
+        description: Day of activity
       - name: cost_per_conversion
         description: The average amount of money you've spent on a conversion. >
           (The total count is calculated based on the time each ad impression occurred.)
@@ -443,11 +443,11 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
+      # - name: _fivetran_synced
+      #   description: "{{ doc('_fivetran_synced') }}"
 
   - name: stg_tiktok_ads__ad_report_hourly
-    description: replace
+    description: Each record represents data for each ad for each hour.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -455,9 +455,9 @@ models:
             - _fivetran_synced 
     columns:
       - name: ad_id
-        description: 
+        description: Ad id
       - name: stat_time_hour
-        description:
+        description: Hour of activity
       - name: cost_per_conversion
         description: The average amount of money you've spent on a conversion. >
           (The total count is calculated based on the time each ad impression occurred.)
@@ -553,11 +553,11 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
+      # - name: _fivetran_synced
+      #   description: "{{ doc('_fivetran_synced') }}"
 
   - name: stg_tiktok_ads__adgroup_report_daily
-    description: replace
+    description: Each record represents data for each ad group for each day.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -565,9 +565,9 @@ models:
             - _fivetran_synced 
     columns:
       - name: ad_group_id
-        description: 
+        description: Ad group id
       - name: stat_time_day
-        description:
+        description: Day of activity
       - name: cost_per_conversion
         description: The average amount of money you've spent on a conversion. >
           (The total count is calculated based on the time each ad impression occurred.)
@@ -663,11 +663,11 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
+      # - name: _fivetran_synced
+      #   description: "{{ doc('_fivetran_synced') }}"
 
   - name: stg_tiktok_ads__adgroup_report_hourly
-    description: replace
+    description: Each record represents data for each ad group for each hour.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -675,9 +675,9 @@ models:
             - _fivetran_synced 
     columns:
       - name: ad_group_id
-        description: 
+        description: Ad group id
       - name: stat_time_hour
-        description:
+        description: Hour of activity
       - name: cost_per_conversion
         description: The average amount of money you've spent on a conversion. >
           (The total count is calculated based on the time each ad impression occurred.)
@@ -773,11 +773,11 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
+      # - name: _fivetran_synced
+      #   description: "{{ doc('_fivetran_synced') }}"
 
   - name: stg_tiktok_ads__campaign_report_daily
-    description: replace
+    description: Each record represents data for each campaign for each day.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -785,9 +785,9 @@ models:
             - _fivetran_synced 
     columns:
       - name: campaign_id
-        description: 
+        description: Campaign id
       - name: stat_time_day
-        description:
+        description: Day of activity
       - name: cost_per_conversion
         description: The average amount of money you've spent on a conversion. >
           (The total count is calculated based on the time each ad impression occurred.)
@@ -883,11 +883,11 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
+      # - name: _fivetran_synced
+      #   description: "{{ doc('_fivetran_synced') }}"
 
   - name: stg_tiktok_ads__campaign_report_hourly
-    description: replace
+    description: Each record represent data for each campaign for each hour.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -895,9 +895,9 @@ models:
             - _fivetran_synced 
     columns:
       - name: campaign_id
-        description: 
+        description: Campaign id
       - name: stat_time_hour
-        description:
+        description: Hour of activity
       - name: cost_per_conversion
         description: The average amount of money you've spent on a conversion. >
           (The total count is calculated based on the time each ad impression occurred.)
@@ -993,5 +993,5 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
+      # - name: _fivetran_synced
+      #   description: "{{ doc('_fivetran_synced') }}"
