@@ -349,6 +349,7 @@ models:
           combination_of_columns:
             - ad_id
             - _fivetran_synced 
+            - stat_time_day
     columns:
       - name: ad_id
         description: Ad id
@@ -473,6 +474,7 @@ models:
           combination_of_columns:
             - ad_id
             - _fivetran_synced 
+            - stat_time_hour
     columns:
       - name: ad_id
         description: Ad id
@@ -597,6 +599,7 @@ models:
           combination_of_columns:
             - ad_group_id
             - _fivetran_synced 
+            - stat_time_day
     columns:
       - name: ad_group_id
         description: Ad group id
@@ -720,7 +723,8 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - ad_group_id
-            - _fivetran_synced 
+            - _fivetran_synced
+            - stat_time_hour
     columns:
       - name: ad_group_id
         description: Ad group id
@@ -845,6 +849,7 @@ models:
           combination_of_columns:
             - campaign_id
             - _fivetran_synced 
+            - stat_time_day
     columns:
       - name: campaign_id
         description: Campaign id
@@ -969,6 +974,7 @@ models:
           combination_of_columns:
             - campaign_id
             - _fivetran_synced 
+            - stat_time_hour
     columns:
       - name: campaign_id
         description: Campaign id
