@@ -56,6 +56,8 @@ sources:
             description: Fixed phone number, desensitised data
           - name: timezone
             description: Ad account time zone including GMT offset
+          - name: _fivetran_synced
+            description: Timestamp of when Fivetran synced a record. 
 
       - name: campaign_history
         description: Each record represents a version of a TikTok campaign.
@@ -408,8 +410,8 @@ sources:
             description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
           - name: likes
             description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-          # - name: _fivetran_synced
-          #   description: "{{ doc('_fivetran_synced') }}"
+          - name: _fivetran_synced
+            description: Timestamp of when Fivetran synced a record. 
 
 
       - name: ad_report_daily
@@ -527,8 +529,8 @@ sources:
             description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
           - name: likes
             description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-          # - name: _fivetran_synced
-          #   description: "{{ doc('_fivetran_synced') }}"
+          - name: _fivetran_synced
+            description: Timestamp of when Fivetran synced a record. 
 
 
       - name: campaign_report_daily
@@ -647,8 +649,8 @@ sources:
             description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
           - name: likes
             description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-          # - name: _fivetran_synced
-          #   description: "{{ doc('_fivetran_synced') }}"
+          - name: _fivetran_synced
+            description: Timestamp of when Fivetran synced a record. 
 
       - name: campaign_report_hourly
         description: Each record represents data for each campaign for each hour.
@@ -766,8 +768,8 @@ sources:
             description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
           - name: likes
             description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-          # - name: _fivetran_synced
-          #   description: "{{ doc('_fivetran_synced') }}"
+          - name: _fivetran_synced
+            description: Timestamp of when Fivetran synced a record. 
 
       - name: adgroup_report_daily
         description: Each record represents data for each ad group for each day.
@@ -884,8 +886,8 @@ sources:
             description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
           - name: likes
             description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-          # - name: _fivetran_synced
-          #   description: "{{ doc('_fivetran_synced') }}"
+          - name: _fivetran_synced
+            description: Timestamp of when Fivetran synced a record. 
 
       - name: adgroup_report_hourly
         description: Each record represents data for each ad group for each hour.
@@ -1002,5 +1004,5 @@ sources:
             description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
           - name: likes
             description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-          # - name: _fivetran_synced
-          #   description: "{{ doc('_fivetran_synced') }}"
+          - name: _fivetran_synced
+            description: Timestamp of when Fivetran synced a record. 

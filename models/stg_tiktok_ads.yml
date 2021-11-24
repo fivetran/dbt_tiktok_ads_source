@@ -55,10 +55,10 @@ models:
         description: Fixed phone number, desensitised data
       - name: timezone
         description: Ad account time zone including GMT offset
-      # - name: _fivetran_synced
-      #   description: "{{ doc('_fivetran_synced') }}"
-      # - name: is_most_recent_record
-      #   description: "{{ doc('is_most_recent_record') }}"
+      - name: _fivetran_synced
+        description: Timestamp of when Fivetran synced a record. 
+      - name: is_most_recent_record
+        description: Whether record is the most recent one for this particular grain.
           
 
   - name: stg_tiktok_ads__ad_group_history
@@ -217,10 +217,10 @@ models:
         description: Number of video actions.
       - name: video_download
         description: Whether users can download your video ads on TikTok(cannot be updated once created). 
-      # - name: _fivetran_synced
-      #   description: "{{ doc('_fivetran_synced') }}"
-      # - name: is_most_recent_record
-      #   description: "{{ doc('is_most_recent_record') }}"
+      - name: _fivetran_synced
+        description: Timestamp of when Fivetran synced a record. 
+      - name: is_most_recent_record
+        description: Whether record is the most recent one for this particular grain.
           
 
   - name: stg_tiktok_ads__ad_history
@@ -297,10 +297,10 @@ models:
         description: The utm_term parameter of the ad, extracted from the `landing_page_url`.
       - name: video_id
         description: The video ID.
-      # - name: _fivetran_synced
-      #   description: "{{ doc('_fivetran_synced') }}"
-      # - name: is_most_recent_record
-      #   description: "{{ doc('is_most_recent_record') }}"
+      - name: _fivetran_synced
+        description: Timestamp of when Fivetran synced a record. 
+      - name: is_most_recent_record
+        description: Whether record is the most recent one for this particular grain.
           
 
   - name: stg_tiktok_ads__campaign_history
@@ -337,10 +337,10 @@ models:
         description: Campaign status
       - name: split_test_variable
         description: Split Test variables. Optional values; TARGETING, BIDDING_OPTIMIZATION , CREATIVE.
-      # - name: _fivetran_synced
-      #   description: "{{ doc('_fivetran_synced') }}"
-      # - name: is_most_recent_record
-      #   description: "{{ doc('is_most_recent_record') }}"
+      - name: _fivetran_synced
+        description: Timestamp of when Fivetran synced a record. 
+      - name: is_most_recent_record
+        description: Whether record is the most recent one for this particular grain.
           
   - name: stg_tiktok_ads__ad_report_daily
     description: Each record represents data for each ad for each day.
@@ -464,8 +464,8 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-      # - name: _fivetran_synced
-      #   description: "{{ doc('_fivetran_synced') }}"
+      - name: _fivetran_synced
+        description: Timestamp of when Fivetran synced a record. 
 
   - name: stg_tiktok_ads__ad_report_hourly
     description: Each record represents data for each ad for each hour.
@@ -589,8 +589,8 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-      # - name: _fivetran_synced
-      #   description: "{{ doc('_fivetran_synced') }}"
+      - name: _fivetran_synced
+        description: Timestamp of when Fivetran synced a record. 
 
   - name: stg_tiktok_ads__adgroup_report_daily
     description: Each record represents data for each ad group for each day.
@@ -714,8 +714,8 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-      # - name: _fivetran_synced
-      #   description: "{{ doc('_fivetran_synced') }}"
+      - name: _fivetran_synced
+        description: Timestamp of when Fivetran synced a record.
 
   - name: stg_tiktok_ads__adgroup_report_hourly
     description: Each record represents data for each ad group for each hour.
@@ -839,8 +839,8 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-      # - name: _fivetran_synced
-      #   description: "{{ doc('_fivetran_synced') }}"
+      - name: _fivetran_synced
+        description: Timestamp of when Fivetran synced a record.
 
   - name: stg_tiktok_ads__campaign_report_daily
     description: Each record represents data for each campaign for each day.
@@ -964,8 +964,8 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-      # - name: _fivetran_synced
-      #   description: "{{ doc('_fivetran_synced') }}"
+      - name: _fivetran_synced
+        description: Timestamp of when Fivetran synced a record.
 
   - name: stg_tiktok_ads__campaign_report_hourly
     description: Each record represent data for each campaign for each hour.
@@ -1089,5 +1089,5 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-      # - name: _fivetran_synced
-      #   description: "{{ doc('_fivetran_synced') }}"
+      - name: _fivetran_synced
+        description: Timestamp of when Fivetran synced a record.
