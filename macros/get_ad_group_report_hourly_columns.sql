@@ -1,4 +1,4 @@
-{% macro get_adgroup_report_daily_columns() %}
+{% macro get_ad_group_report_hourly_columns() %}
 
 {% set columns = [
     {"name": "_fivetran_synced", "datatype": dbt_utils.type_timestamp()},
@@ -33,10 +33,8 @@
     {"name": "secondary_goal_result", "datatype": dbt_utils.type_string()},
     {"name": "secondary_goal_result_rate", "datatype": dbt_utils.type_string()},
     {"name": "shares", "datatype": dbt_utils.type_numeric()},
-    {"name": "skan_conversion", "datatype": dbt_utils.type_numeric()},
-    {"name": "skan_cost_per_conversion", "datatype": dbt_utils.type_float()},
     {"name": "spend", "datatype": dbt_utils.type_float()},
-    {"name": "stat_time_day", "datatype": dbt_utils.type_timestamp()},
+    {"name": "stat_time_hour", "datatype": dbt_utils.type_timestamp()},
     {"name": "video_play_actions", "datatype": dbt_utils.type_numeric()},
     {"name": "video_views_p_100", "datatype": dbt_utils.type_numeric()},
     {"name": "video_views_p_25", "datatype": dbt_utils.type_numeric()},

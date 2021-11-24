@@ -81,7 +81,7 @@ models:
         description: IDs of the action categories (behaviors) that you want to target. 
       - name: action_days
         description: replace
-      - name: adgroup_name
+      - name: ad_group_name
         description: Ad group name. Character limit is 512 and cannot contain emoji.
       - name: age
         description: Age groups you want to target. 
@@ -592,7 +592,7 @@ models:
       - name: _fivetran_synced
         description: Timestamp of when Fivetran synced a record. 
 
-  - name: stg_tiktok_ads__adgroup_report_daily
+  - name: stg_tiktok_ads__ad_group_report_daily
     description: Each record represents data for each ad group for each day.
     tests:
       - dbt_utils.unique_combination_of_columns:
@@ -717,7 +717,7 @@ models:
       - name: _fivetran_synced
         description: Timestamp of when Fivetran synced a record.
 
-  - name: stg_tiktok_ads__adgroup_report_hourly
+  - name: stg_tiktok_ads__ad_group_report_hourly
     description: Each record represents data for each ad group for each hour.
     tests:
       - dbt_utils.unique_combination_of_columns:

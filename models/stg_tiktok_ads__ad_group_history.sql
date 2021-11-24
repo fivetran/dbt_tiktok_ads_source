@@ -11,7 +11,7 @@ fields as (
         {{
             fivetran_utils.fill_staging_columns(
                 source_columns=adapter.get_columns_in_relation(ref('stg_tiktok_ads__ad_group_history_tmp')),
-                staging_columns=get_adgroup_history_columns()
+                staging_columns=get_ad_group_history_columns()
             )
         }}
 

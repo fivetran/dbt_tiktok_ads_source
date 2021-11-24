@@ -1,7 +1,7 @@
 with base as (
 
     select *
-    from {{ ref('stg_tiktok_ads__adgroup_report_hourly_tmp') }}
+    from {{ ref('stg_tiktok_ads__ad_group_report_hourly_tmp') }}
 
 ), 
 
@@ -10,8 +10,8 @@ fields as (
     select
         {{
             fivetran_utils.fill_staging_columns(
-                source_columns=adapter.get_columns_in_relation(ref('stg_tiktok_ads__adgroup_report_hourly_tmp')),
-                staging_columns=get_adgroup_report_hourly_columns()
+                source_columns=adapter.get_columns_in_relation(ref('stg_tiktok_ads__ad_group_report_hourly_tmp')),
+                staging_columns=get_ad_group_report_hourly_columns()
             )
         }}
 
