@@ -9,7 +9,6 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - advertiser_id
-            - _fivetran_synced 
     columns:
       - name: advertiser_id
         description: Advertiser ID
@@ -19,7 +18,7 @@ models:
         description: Account available balance
       - name: company
         description: Advertiser's company name
-      - name: contracter
+      - name: contacter
         description: Contact Person
       - name: country
         description: The advertiser's country
@@ -67,7 +66,7 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - ad_group_id
-            - _fivetran_synced 
+            - updated_at 
     columns:
       - name: ad_group_id
         description: Ad group ID
@@ -229,7 +228,7 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - ad_id
-            - _fivetran_synced
+            - updated_at
     columns:
       - name: ad_id
         description: Ad ID
@@ -309,7 +308,7 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - campaign_id
-            - _fivetran_synced
+            - updated_at
     columns:
       - name: campaign_id
         description: Campaign ID
@@ -348,7 +347,6 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - ad_id
-            - _fivetran_synced 
             - stat_time_day
     columns:
       - name: ad_id
@@ -473,7 +471,6 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - ad_id
-            - _fivetran_synced 
             - stat_time_hour
     columns:
       - name: ad_id
@@ -598,7 +595,6 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - ad_group_id
-            - _fivetran_synced 
             - stat_time_day
     columns:
       - name: ad_group_id
@@ -723,7 +719,6 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - ad_group_id
-            - _fivetran_synced
             - stat_time_hour
     columns:
       - name: ad_group_id
@@ -848,7 +843,6 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - campaign_id
-            - _fivetran_synced 
             - stat_time_day
     columns:
       - name: campaign_id
@@ -973,7 +967,6 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - campaign_id
-            - _fivetran_synced 
             - stat_time_hour
     columns:
       - name: campaign_id

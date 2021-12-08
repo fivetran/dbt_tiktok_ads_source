@@ -20,7 +20,7 @@ sources:
             description: Account available balance
           - name: company
             description: Advertiser's company name
-          - name: contracter
+          - name: contacter
             description: Contact Person
           - name: country
             description: The advertiser's country

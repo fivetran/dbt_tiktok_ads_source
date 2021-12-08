@@ -50,16 +50,7 @@ final as (
         average_video_play_per_user
     from fields
 
-), 
-
-most_recent as (
-
-    select 
-        *,
-        row_number() over (partition by ad_group_id order by _fivetran_synced desc) = 1 as is_most_recent_record
-    from final
-
 )
 
-select * from most_recent
+select * from final
 
