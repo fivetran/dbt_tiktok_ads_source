@@ -5,13 +5,12 @@ version: 2
 models:
   - name: stg_tiktok_ads__advertiser
     description: Each record represents data for each advertiser.
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - advertiser_id
     columns:
       - name: advertiser_id
         description: Advertiser ID
+        tests:
+          - unique
+          - not_null
       - name: address
         description: Advertiser address information
       - name: balance
@@ -70,6 +69,8 @@ models:
     columns:
       - name: ad_group_id
         description: Ad group ID
+        tests:
+          - not_null
       - name: updated_at
         description: Time the record was updated.
       - name: advertiser_id
@@ -232,6 +233,8 @@ models:
     columns:
       - name: ad_id
         description: Ad ID
+        tests:
+          - not_null
       - name: updated_at
         description: Time the record was updated.
       - name: ad_group_id
@@ -312,6 +315,8 @@ models:
     columns:
       - name: campaign_id
         description: Campaign ID
+        tests:
+          - not_null
       - name: updated_at
         description: Time the record was updated.
       - name: advertiser_id
@@ -351,6 +356,8 @@ models:
     columns:
       - name: ad_id
         description: Ad id
+        tests:
+          - not_null
       - name: stat_time_day
         description: Day of activity
       - name: cost_per_conversion
@@ -599,6 +606,8 @@ models:
     columns:
       - name: ad_group_id
         description: Ad group id
+        tests:
+          - not_null
       - name: stat_time_day
         description: Day of activity
       - name: cost_per_conversion
@@ -723,6 +732,8 @@ models:
     columns:
       - name: ad_group_id
         description: Ad group id
+        tests:
+          - not_null
       - name: stat_time_hour
         description: Hour of activity
       - name: cost_per_conversion
@@ -847,6 +858,8 @@ models:
     columns:
       - name: campaign_id
         description: Campaign id
+        tests:
+          - not_null
       - name: stat_time_day
         description: Day of activity
       - name: cost_per_conversion
@@ -971,6 +984,8 @@ models:
     columns:
       - name: campaign_id
         description: Campaign id
+        tests:
+          - not_null
       - name: stat_time_hour
         description: Hour of activity
       - name: cost_per_conversion
