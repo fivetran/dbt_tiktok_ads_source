@@ -25,15 +25,8 @@ final as (
         campaign_id, 
         updated_at, 
         advertiser_id, 
-        budget, 
-        budget_mode, 
         campaign_name, 
         campaign_type, 
-        create_time, 
-        is_new_structure, 
-        objective_type, 
-        opt_status, 
-        -- status,  -- there isn't a status column in the source 
         split_test_variable,
         _fivetran_synced
 
