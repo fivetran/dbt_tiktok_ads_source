@@ -37,7 +37,6 @@ final as (
         gender,
         -- languages, 
         landing_page_url,
-        video_download,
         _fivetran_synced
     from fields
 
