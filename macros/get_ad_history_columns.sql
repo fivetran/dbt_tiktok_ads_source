@@ -24,7 +24,8 @@
     {"name": "profile_image", "datatype": dbt_utils.type_string()},
     {"name": "status", "datatype": dbt_utils.type_string()},
     {"name": "updated_at", "datatype": dbt_utils.type_timestamp()},
-    {"name": "video_id", "datatype": dbt_utils.type_string()}
+    {"name": "video_id", "datatype": dbt_utils.type_string()},
+    {"name": "image_ids", "datatype": dbt_utils.type_string()}
 
 ] %}
 

@@ -57,7 +57,18 @@
     {"name": "statistic_type", "datatype": dbt_utils.type_string()},
     {"name": "status", "datatype": dbt_utils.type_string()},
     {"name": "updated_at", "datatype": dbt_utils.type_timestamp()},
-    {"name": "video_download", "datatype": dbt_utils.type_string()}
+    {"name": "video_download", "datatype": dbt_utils.type_string()},
+    {"name": "audience", "datatype": dbt_utils.type_string()},
+    {"name": "excluded_audience", "datatype": dbt_utils.type_string()},
+    {"name": "location", "datatype": dbt_utils.type_string()},
+    {"name": "interest_category_v_2", "datatype": dbt_utils.type_string()},
+    {"name": "pangle_block_app_list_id", "datatype": dbt_utils.type_string()},
+    {"name": "action_categories", "datatype": dbt_utils.type_string()},
+    {"name": "placement", "datatype": dbt_utils.type_string()},
+    {"name": "keywords", "datatype": dbt_utils.type_string()},
+    {"name": "age", "datatype": dbt_utils.type_string()},
+    {"name": "languages", "datatype": dbt_utils.type_string()}
+
 ] %}
 
 {{ return(columns) }}
