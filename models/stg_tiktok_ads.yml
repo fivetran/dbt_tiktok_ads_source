@@ -67,6 +67,8 @@ models:
         description: Time the record was updated.
       - name: advertiser_id
         description: Advertiser ID
+      - name: action_categories
+        description: IDs of the action categories (behaviors) that you want to target.
       - name: campaign_id
         description: The Ad group's campaign ID.
       - name: action_days
@@ -77,10 +79,14 @@ models:
         description: Age groups you want to target. 
       - name: audience_type
         description: Audience Type
+      - name: budget
+        description: Ad budget. Returns 0.0 when Campaign Budget Optimization (budget_optimize_switch) is on.
       - name: category
         description: Ad group category.
       - name: display_name
         description: Display name of ad group.
+      - name: interest_category
+        description: Interest classification. If the interest is specified, users that do not meet interest target will be excluded during delivery.
       - name: frequency
         description: >
           frequency, together with frequency_schedule, controls how often people see your ad (only available for REACH ads). 
@@ -117,6 +123,8 @@ models:
         description: Ad group ID
       - name: advertiser_id
         description: Advertiser ID
+      - name: base_url
+        description: The base URL of the ad, extracted from the `landing page url`.
       - name: campaign_id
         description: Campaign ID
       - name: ad_name
@@ -232,6 +240,8 @@ models:
         description: The rate of profile visits per impression the paid ad drove during the campaign. This metric is only for Boosted TikToks.
       - name: average_video_play
         description: The average time your video was played per single video view, including any time spent replaying the video.
+      - name: average_video_play_per_user
+        description: The average time per user your video was played per single video view, including any time spent replaying the video.
       - name: profile_visits
         description: The number of profile visits the ad drove during the campaign. This metric is only for Boosted TikToks.
       - name: cpm
@@ -305,6 +315,8 @@ models:
         description: The rate of profile visits per impression the paid ad drove during the campaign. This metric is only for Boosted TikToks.
       - name: average_video_play
         description: The average time your video was played per single video view, including any time spent replaying the video.
+      - name: average_video_play_per_user
+        description: The average time per user your video was played per single video view, including any time spent replaying the video.
       - name: profile_visits
         description: The number of profile visits the ad drove during the campaign. This metric is only for Boosted TikToks.
       - name: cpm
@@ -378,6 +390,8 @@ models:
         description: The rate of profile visits per impression the paid ad drove during the campaign. This metric is only for Boosted TikToks.
       - name: average_video_play
         description: The average time your video was played per single video view, including any time spent replaying the video.
+      - name: average_video_play_per_user
+        description: The average time per user your video was played per single video view, including any time spent replaying the video.
       - name: profile_visits
         description: The number of profile visits the ad drove during the campaign. This metric is only for Boosted TikToks.
       - name: cpm
