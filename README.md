@@ -39,8 +39,8 @@ By default, this package will look for your TikTok Ads data in the `tiktok_ads` 
 config-version: 2
 
 vars:
-    tiktok_database: tiktok_ads_database
-    tiktok_schema: tiktok_ads_schema
+    tiktok_ads_database: your_database_name
+    tiktok_ads_schema: your_schema_name
 ```
 
 ### Changing the Build Schema
