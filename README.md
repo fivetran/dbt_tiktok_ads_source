@@ -11,7 +11,7 @@ This package enriches your Fivetran data by doing the following:
 
 ## Models
 
-This package contains staging models, designed to work simultaneously with our [TikTok Ads modeling package](https://github.com/fivetran/dbt_tiktok_ads) and our [multi-platform Ad Reporting package](https://github.com/fivetran/dbt_ad_reporting). The staging models:
+This package contains staging models, designed to work simultaneously with our [TikTok Ads transform package](https://github.com/fivetran/dbt_tiktok_ads) and our [multi-platform Ad Reporting package](https://github.com/fivetran/dbt_ad_reporting). The staging models:
 
 * Name columns consistently across all packages:
     * Boolean fields are prefixed with `is_` or `has_`
