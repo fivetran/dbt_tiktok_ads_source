@@ -23,7 +23,7 @@ final as (
 
     select  
         ad_id,
-        updated_at,
+        cast(updated_at as {{ dbt_utils.type_timestamp() }}) as updated_at,
         adgroup_id as ad_group_id,
         advertiser_id,
         campaign_id,
@@ -42,7 +42,7 @@ final as (
         {{ dbt_utils.get_url_parameter('landing_page_url', 'utm_term') }} as utm_term,
         landing_page_url,
         video_id,
-        _fivetran_synced
+        cast(_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced,
     from fields
 
 ), 

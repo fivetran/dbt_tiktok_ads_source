@@ -23,7 +23,7 @@ final as (
 
     select  
         adgroup_id as ad_group_id, 
-        _fivetran_synced,
+        cast(_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced,
         stat_time_hour, 
         cpc, 
         cpm, 
