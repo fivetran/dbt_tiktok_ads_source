@@ -37,7 +37,7 @@ models:
         description: License number
       - name: license_url
         description: License preview address, the link is valid for an hour by default.
-      - name: name
+      - name: advertiser_name
         description: Advertiser name
       - name: phone_number
         description: Contact mobile number, desensitised data
