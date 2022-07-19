@@ -33,7 +33,7 @@ final as (
         email, 
         industry, 
         language,
-        name, 
+        name as advertiser_name, 
         phone_number, 
         telephone, 
         timezone,
