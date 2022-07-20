@@ -48,6 +48,10 @@ final as (
         video_views_p_75,  
         average_video_play, 
         average_video_play_per_user
+        
+        {% for metric in var('tiktok_ads__ad_hourly_passthrough_metrics', []) %}
+        , {{ metric }}
+        {% endfor %}
     from fields
 
 )
