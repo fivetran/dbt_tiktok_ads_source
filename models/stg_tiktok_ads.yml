@@ -188,7 +188,7 @@ models:
       - name: is_most_recent_record
         description: Whether record is the most recent one for this particular grain.
           
- 
+
   - name: stg_tiktok_ads__ad_report_hourly
     description: Each record represents data for each ad for each hour.
     tests:
@@ -199,8 +199,12 @@ models:
     columns:
       - name: ad_id
         description: Ad id
+        tests:
+          - not_null
       - name: stat_time_hour
         description: Hour of activity
+        tests:
+          - not_null
       - name: cost_per_conversion
         description: >
           The average amount of money you've spent on a conversion. 
@@ -261,7 +265,7 @@ models:
       - name: _fivetran_synced
         description: Timestamp of when Fivetran synced a record. 
 
- 
+
   - name: stg_tiktok_ads__ad_group_report_hourly
     description: Each record represents data for each ad group for each hour.
     tests:
@@ -276,6 +280,8 @@ models:
           - not_null
       - name: stat_time_hour
         description: Hour of activity
+        tests:
+          - not_null
       - name: cost_per_conversion
         description: >
           The average amount of money you've spent on a conversion. 
@@ -351,6 +357,8 @@ models:
           - not_null
       - name: stat_time_hour
         description: Hour of activity
+        tests:
+          - not_null
       - name: cost_per_conversion
         description: >
           The average amount of money you've spent on a conversion. 
