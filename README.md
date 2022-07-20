@@ -10,13 +10,13 @@
         <img src="https://img.shields.io/badge/Contributions-welcome-blueviolet" /></a>
 </p>
 
-# Tiktok Ads Source dbt Package ([Docs](https://fivetran.github.io/dbt_tiktok_source/))
+# Tiktok Ads Source dbt Package ([Docs](https://fivetran.github.io/dbt_tiktok_ads_source/))
 # 📣 What does this dbt package do?
-- Materializes [Tiktok staging tables](https://fivetran.github.io/dbt_tiktok_ads_source/#!/overview/tiktok_ads_source/models/?g_v=1) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/tiktok_ads/#schemainformation). These staging tables clean, test, and prepare your Tiktok data from [Fivetran's connector](https://fivetran.com/docs/applications/tiktok_ads) for analysis by doing the following:
+- Materializes [Tiktok Ads staging tables](https://fivetran.github.io/dbt_tiktok_ads_source/#!/overview/tiktok_ads_source/models/?g_v=1) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/tiktok_ads/#schemainformation). These staging tables clean, test, and prepare your Tiktok Ads data from [Fivetran's connector](https://fivetran.com/docs/applications/tiktok_ads) for analysis by doing the following:
   - Name columns for consistency across all packages and for easier analysis
   - Adds freshness tests to source data
   - Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
-- Generates a comprehensive data dictionary of your Tiktok data through the [dbt docs site](https://fivetran.github.io/dbt_tiktok_ads_source/).
+- Generates a comprehensive data dictionary of your Tiktok Ads data through the [dbt docs site](https://fivetran.github.io/dbt_tiktok_ads_source/).
 - These tables are designed to work simultaneously with our [Tiktok Ads transformation package](https://github.com/fivetran/dbt_tiktok_ads).
 
 
@@ -27,7 +27,7 @@ To use this dbt package, you must have the following:
 - A **BigQuery**, **Snowflake**, **Redshift**, **PostgreSQL**, or **Databricks** destination.
 
 ## Step 2: Install the package
-Include the following tiktok_source package version in your `packages.yml` file.
+Include the following tiktok_ads_source package version in your `packages.yml` file.
 > TIP: Check [dbt Hub](https://hub.getdbt.com/) for the latest installation instructions or [read the dbt docs](https://docs.getdbt.com/docs/package-management) for more information on installing packages.
 ```yaml
 packages:
@@ -44,7 +44,7 @@ vars:
     tiktok_ads_schema: your_schema_name 
 ```
 
-## (Optional) Step 5: Additional configurations
+## (Optional) Step 4: Additional configurations
 ### Changing the Build Schema
 By default, this package will build the TikTok Ads staging models within a schema titled (<target_schema> + `_stg_tiktok_ads`) in your target database. If this is not where you would like your TikTok Ads staging data to be written to, add the following configuration to your `dbt_project.yml` file:
 
@@ -66,13 +66,9 @@ vars:
     tiktok_ads_<default_source_table_name>_identifier: your_table_name 
 ```
 
-## (Optional) Step 6: Orchestrate your models with Fivetran Transformations for dbt Core™
-<details><summary>Expand to view details</summary>
-<br>
-    
+## (Optional) Step 5: Orchestrate your models with Fivetran Transformations for dbt Core™
 Fivetran offers the ability for you to orchestrate your dbt project through [Fivetran Transformations for dbt Core™](https://fivetran.com/docs/transformations/dbt). Learn how to set up your project for orchestration through Fivetran in our [Transformations for dbt Core™ setup guides](https://fivetran.com/docs/transformations/dbt#setupguide).
-</details>
-    
+
 # 🔍 Does this package have dependencies?
 This dbt package is dependent on the following dbt packages. Please be aware that these dependencies are installed by default within this package. For more information on the following packages, refer to the [dbt hub](https://hub.getdbt.com/) site.
 > IMPORTANT: If you have any of these dependent packages in your own `packages.yml` file, we highly recommend that you remove them from your root `packages.yml` to avoid package version conflicts.
