@@ -153,8 +153,6 @@ models:
         description: The utm_content parameter of the ad, extracted from the `landing_page_url`.
       - name: utm_term
         description: The utm_term parameter of the ad, extracted from the `landing_page_url`.
-      - name: video_id
-        description: The video ID.
       - name: _fivetran_synced
         description: Timestamp of when Fivetran synced a record. 
       - name: is_most_recent_record

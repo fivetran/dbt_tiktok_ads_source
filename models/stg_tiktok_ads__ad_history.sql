@@ -41,7 +41,6 @@ final as (
         {{ dbt_utils.get_url_parameter('landing_page_url', 'utm_content') }} as utm_content,
         {{ dbt_utils.get_url_parameter('landing_page_url', 'utm_term') }} as utm_term,
         landing_page_url,
-        video_id,
         cast(_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced
     from fields
 
