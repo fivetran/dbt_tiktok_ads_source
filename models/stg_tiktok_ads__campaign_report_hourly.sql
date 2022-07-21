@@ -14,6 +14,10 @@ fields as (
                 staging_columns=get_campaign_report_hourly_columns()
             )
         }}
+        
+        {% for metric in var('tiktok_ads__campaign_hourly_passthrough_metrics', []) %}
+        , {{ metric }}
+        {% endfor %}
 
     from base
 
