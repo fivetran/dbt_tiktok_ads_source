@@ -16,7 +16,7 @@
     {"name": "gender", "datatype": dbt_utils.type_string()},
     {"name": "landing_page_url", "datatype": dbt_utils.type_string()},
     {"name": "updated_at", "datatype": dbt_utils.type_timestamp()},
-    {"name": "interest_category_v_2", "datatype": dbt_utils.type_string()},)},
+    {"name": "interest_category_v_2", "datatype": dbt_utils.type_string()},
     {"name": "action_categories", "datatype": dbt_utils.type_string()},
     {"name": "age", "datatype": dbt_utils.type_string()},
     {"name": "languages", "datatype": dbt_utils.type_string()}
