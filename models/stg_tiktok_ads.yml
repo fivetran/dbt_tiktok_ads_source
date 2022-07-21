@@ -129,8 +129,6 @@ models:
         description: Campaign ID
       - name: ad_name
         description: Ad Name.
-      - name: ad_text
-        description: The ad text.
       - name: call_to_action
         description: Call to action values. 
       - name: click_tracking_url

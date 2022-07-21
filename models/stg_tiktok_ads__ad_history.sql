@@ -28,7 +28,6 @@ final as (
         advertiser_id,
         campaign_id,
         ad_name,
-        ad_text,
         call_to_action,
         click_tracking_url,
         impression_tracking_url,
