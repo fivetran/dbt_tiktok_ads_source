@@ -45,6 +45,21 @@ vars:
 ```
 
 ## (Optional) Step 4: Additional configurations
+
+### Passing Through Additional Metrics
+If you would like to pass through additional metrics to the end models that are not by default, add the following configuration to your `dbt_project.yml` file:  
+
+```yml  
+# dbt_project.yml
+
+...
+vars:
+    tiktok_ads__ad_group_hourly_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from tiktok_ads.adgroup_report_hourly
+    tiktok_ads__ad_hourly_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from tiktok_ads.ad_report_hourly
+    tiktok_ads__campaign_hourly_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from tiktok_ads.campaign_report_hourly
+```
+> Please ensure you use due diligence when adding metrics to these models. The metrics added by default have been vetted by the Fivetran team maintaining this package for accuracy.  You will want to ensure whichever metrics you pass through are indeed appropriate to aggregate.
+
 ### Changing the Build Schema
 By default, this package will build the TikTok Ads staging models within a schema titled (<target_schema> + `_stg_tiktok_ads`) in your target database. If this is not where you would like your TikTok Ads staging data to be written to, add the following configuration to your `dbt_project.yml` file:
 
