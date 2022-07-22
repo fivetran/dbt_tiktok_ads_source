@@ -23,12 +23,12 @@ final as (
 
     select   
         campaign_id, 
-        updated_at, 
+        cast(updated_at as {{ dbt_utils.type_timestamp() }}) as updated_at,
         advertiser_id, 
         campaign_name, 
         campaign_type, 
         split_test_variable,
-        _fivetran_synced
+        cast(_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced
 
     from fields
 

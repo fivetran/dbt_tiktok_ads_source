@@ -14,6 +14,10 @@ fields as (
                 staging_columns=get_ad_report_hourly_columns()
             )
         }}
+        
+        {% for metric in var('tiktok_ads__ad_hourly_passthrough_metrics', []) %}
+        , {{ metric }}
+        {% endfor %}
 
     from base
 
@@ -23,7 +27,7 @@ final as (
 
     select  
         ad_id, 
-        _fivetran_synced,
+        cast(_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced,
         stat_time_hour, 
         cpc, 
         cpm, 
@@ -48,6 +52,10 @@ final as (
         video_views_p_75,  
         average_video_play, 
         average_video_play_per_user
+        
+        {% for metric in var('tiktok_ads__ad_hourly_passthrough_metrics', []) %}
+        , {{ metric }}
+        {% endfor %}
     from fields
 
 )

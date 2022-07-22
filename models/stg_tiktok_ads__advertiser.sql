@@ -33,11 +33,11 @@ final as (
         email, 
         industry, 
         language,
-        name, 
+        name as advertiser_name, 
         phone_number, 
         telephone, 
         timezone,
-        _fivetran_synced
+        cast(_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced
     from fields
 
 )
