@@ -1,7 +1,6 @@
 {% macro get_advertiser_columns() %}
 
 {% set columns = [
-    {"name": "_fivetran_synced", "datatype": dbt_utils.type_timestamp()},
     {"name": "address", "datatype": dbt_utils.type_string()},
     {"name": "balance", "datatype": dbt_utils.type_float()},
     {"name": "company", "datatype": dbt_utils.type_string()},

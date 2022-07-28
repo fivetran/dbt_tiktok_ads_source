@@ -2,7 +2,6 @@ with base as (
 
     select *
     from {{ ref('stg_tiktok_ads__ad_history_tmp') }}
-
 ), 
 
 fields as (
@@ -16,7 +15,6 @@ fields as (
         }}
 
     from base
-
 ), 
 
 final as (
@@ -39,10 +37,8 @@ final as (
         {{ dbt_utils.get_url_parameter('landing_page_url', 'utm_campaign') }} as utm_campaign,
         {{ dbt_utils.get_url_parameter('landing_page_url', 'utm_content') }} as utm_content,
         {{ dbt_utils.get_url_parameter('landing_page_url', 'utm_term') }} as utm_term,
-        landing_page_url,
-        cast(_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced
+        landing_page_url
     from fields
-
 ), 
 
 most_recent as (
@@ -51,7 +47,7 @@ most_recent as (
         *,
         row_number() over (partition by ad_id order by updated_at desc) = 1 as is_most_recent_record
     from final
-
 )
 
-select * from most_recent
+select * 
+from most_recent

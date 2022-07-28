@@ -2,7 +2,6 @@ with base as (
 
     select *
     from {{ ref('stg_tiktok_ads__campaign_history_tmp') }}
-
 ), 
 
 fields as (
@@ -16,7 +15,6 @@ fields as (
         }}
         
     from base
-
 ), 
 
 final as (
@@ -27,11 +25,8 @@ final as (
         advertiser_id, 
         campaign_name, 
         campaign_type, 
-        split_test_variable,
-        cast(_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced
-
+        split_test_variable
     from fields
-
 ), 
 
 most_recent as (
@@ -40,7 +35,7 @@ most_recent as (
         *,
         row_number() over (partition by campaign_id order by updated_at desc) = 1 as is_most_recent_record
     from final
-
 )
 
-select * from most_recent
+select *
+from most_recent

@@ -45,10 +45,6 @@ models:
         description: Fixed phone number, desensitised data
       - name: timezone
         description: Ad account time zone including GMT offset
-      - name: _fivetran_synced
-        description: Timestamp of when Fivetran synced a record. 
-      - name: is_most_recent_record
-        description: Whether record is the most recent one for this particular grain.
           
 
   - name: stg_tiktok_ads__ad_group_history
@@ -99,11 +95,8 @@ models:
         description: Landing page URL.
       - name: languages
         description: Codes of the languages that you want to target.
-      - name: _fivetran_synced
-        description: Timestamp of when Fivetran synced a record. 
       - name: is_most_recent_record
         description: Whether record is the most recent one for this particular grain.
-          
 
   - name: stg_tiktok_ads__ad_history
     description: Each record represents data for each ad.
@@ -151,8 +144,6 @@ models:
         description: The utm_content parameter of the ad, extracted from the `landing_page_url`.
       - name: utm_term
         description: The utm_term parameter of the ad, extracted from the `landing_page_url`.
-      - name: _fivetran_synced
-        description: Timestamp of when Fivetran synced a record. 
       - name: is_most_recent_record
         description: Whether record is the most recent one for this particular grain.
           
@@ -179,8 +170,6 @@ models:
         description: Campaign Type, indicates the campaign is a regular campaign or iOS 14 campaign.
       - name: split_test_variable
         description: Split Test variables. Optional values; TARGETING, BIDDING_OPTIMIZATION , CREATIVE.
-      - name: _fivetran_synced
-        description: Timestamp of when Fivetran synced a record. 
       - name: is_most_recent_record
         description: Whether record is the most recent one for this particular grain.
           
@@ -257,9 +246,7 @@ models:
       - name: spend
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
-        description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-      - name: _fivetran_synced
-        description: Timestamp of when Fivetran synced a record. 
+        description: The number of likes your video creative received within 1 day of a user seeing a paid ad. 
 
 
   - name: stg_tiktok_ads__ad_group_report_hourly
@@ -335,8 +322,6 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-      - name: _fivetran_synced
-        description: Timestamp of when Fivetran synced a record. 
 
   
   - name: stg_tiktok_ads__campaign_report_hourly
@@ -412,5 +397,3 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
-      - name: _fivetran_synced
-        description: Timestamp of when Fivetran synced a record. 

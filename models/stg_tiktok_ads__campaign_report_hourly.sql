@@ -2,7 +2,6 @@ with base as (
 
     select *
     from {{ ref('stg_tiktok_ads__campaign_report_hourly_tmp') }}
-
 ), 
 
 fields as (
@@ -20,22 +19,20 @@ fields as (
         {% endfor %}
 
     from base
-
 ), 
 
 final as (
 
     select  
-        campaign_id, 
-        cast(_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced,
-        stat_time_hour, 
+        campaign_id,
+        cast(stat_time_hour as {{ dbt_utils.type_timestamp() }}) as stat_time_hour,
         cpc, 
-        cpm, 
+        cpm,
         ctr, 
         impressions, 
         clicks, 
         spend, 
-        reach, 
+        reach,
         conversion, 
         cost_per_conversion, 
         conversion_rate, 
@@ -57,8 +54,8 @@ final as (
         , {{ metric }}
         {% endfor %}
     from fields
-
 )
 
-select * from final
+select *
+from final
 

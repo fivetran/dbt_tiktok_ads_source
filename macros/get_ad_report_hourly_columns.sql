@@ -1,7 +1,6 @@
 {% macro get_ad_report_hourly_columns() %}
 
 {% set columns = [
-    {"name": "_fivetran_synced", "datatype": dbt_utils.type_timestamp()},
     {"name": "ad_id", "datatype": dbt_utils.type_numeric()},
     {"name": "average_video_play", "datatype": dbt_utils.type_float()},
     {"name": "average_video_play_per_user", "datatype": dbt_utils.type_float()},
