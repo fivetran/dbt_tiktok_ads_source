@@ -12,7 +12,7 @@
 
 # Tiktok Ads Source dbt Package ([Docs](https://fivetran.github.io/dbt_tiktok_ads_source/))
 # 📣 What does this dbt package do?
-- Materializes [Tiktok Ads staging tables](https://fivetran.github.io/dbt-tiktok-ads-source/#!/overview/tiktok-ads-source/models/?g_v=1) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/tiktok_ads/#schemainformation). These staging tables clean, test, and prepare your Tiktok Ads data from [Fivetran's connector](https://fivetran.com/docs/applications/tiktok_ads) for analysis by doing the following:
+- Materializes [Tiktok Ads staging tables](https://fivetran.github.io/dbt_tiktok_ads_source/#!/overview/tiktok-ads-source/models/?g_v=1) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/tiktok_ads/#schemainformation). These staging tables clean, test, and prepare your Tiktok Ads data from [Fivetran's connector](https://fivetran.com/docs/applications/tiktok_ads) for analysis by doing the following:
   - Name columns for consistency across all packages and for easier analysis
   - Adds freshness tests to source data
   - Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
@@ -36,7 +36,7 @@ packages:
 ```
 
 ## Step 3: Define database and schema variables
-By default, this package runs using your destination and the `tiktok_ads` schema. If this is not where your Tiktok Ads data is (for example, if your Tiktok schema is named `tiktok_ads_fivetran`), add the following configuration to your root `dbt_project.yml` file:
+By default, this package runs using your destination and the `tiktok_ads` schema. If this is not where your Tiktok Ads data is (for example, if your Tiktok schema is named `tiktok_ads_fivetran`), you would add the following configuration to your root `dbt_project.yml` file with your custom database and schema names:
 
 ```yml
 vars:
