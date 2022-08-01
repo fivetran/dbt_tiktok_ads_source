@@ -18,7 +18,7 @@
     {"name": "profile_visits", "datatype": dbt_utils.type_numeric()},
     {"name": "reach", "datatype": dbt_utils.type_numeric()},
     {"name": "shares", "datatype": dbt_utils.type_numeric()},
-    {"name": "spend", "datatype": dbt_utils.type_float()},
+    {"name": "spend", "datatype": dbt_utils.type_numeric()},
     {"name": "stat_time_hour", "datatype": dbt_utils.type_timestamp()},
     {"name": "video_play_actions", "datatype": dbt_utils.type_numeric()},
     {"name": "video_views_p_25", "datatype": dbt_utils.type_numeric()},
