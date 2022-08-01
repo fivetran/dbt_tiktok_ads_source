@@ -20,11 +20,11 @@ fields as (
 final as (
 
     select   
-        campaign_id, 
+        campaign_id,
         cast(updated_at as {{ dbt_utils.type_timestamp() }}) as updated_at,
-        advertiser_id, 
-        campaign_name, 
-        campaign_type, 
+        advertiser_id,
+        campaign_name,
+        campaign_type,
         split_test_variable
     from fields
 ), 
