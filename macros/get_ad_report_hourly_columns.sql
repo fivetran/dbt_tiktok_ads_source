@@ -30,4 +30,6 @@
 
 {{ return(columns) }}
 
+{{ fivetran_utils.add_pass_through_columns(columns, var('tiktok_ads__ad_hourly_passthrough_metrics')) }}
+
 {% endmacro %}

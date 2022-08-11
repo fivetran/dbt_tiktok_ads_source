@@ -49,10 +49,8 @@ final as (
         video_views_p_75,  
         average_video_play, 
         average_video_play_per_user
-        
-        {% for metric in var('tiktok_ads__ad_hourly_passthrough_metrics', []) %}
-        , {{ metric }}
-        {% endfor %}
+
+        {{ fivetran_utils.fill_pass_through_columns('tiktok_ads__ad_hourly_passthrough_metrics') }}
     from fields
 )
 
