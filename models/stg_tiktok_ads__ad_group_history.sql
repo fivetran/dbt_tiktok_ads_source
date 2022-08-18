@@ -37,16 +37,10 @@ final as (
         frequency_schedule,
         gender,
         languages, 
-        landing_page_url
-    from fields
-), 
-
-most_recent as (
-
-    select 
-        *,
+        landing_page_url,
         row_number() over (partition by ad_group_id order by updated_at desc) = 1 as is_most_recent_record
-    from final
+    from fields
 )
 
-select * from most_recent
+select * 
+from final

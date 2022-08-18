@@ -25,17 +25,10 @@ final as (
         advertiser_id,
         campaign_name,
         campaign_type,
-        split_test_variable
-    from fields
-), 
-
-most_recent as (
-
-    select 
-        *,
+        split_test_variable,
         row_number() over (partition by campaign_id order by updated_at desc) = 1 as is_most_recent_record
-    from final
+    from fields
 )
 
 select *
-from most_recent
+from final
