@@ -2,7 +2,6 @@
 
 {% set columns = [
     {"name": "campaign_id", "datatype": dbt_utils.type_numeric()},
-    {"name": "ad_id", "datatype": dbt_utils.type_numeric()},
     {"name": "average_video_play", "datatype": dbt_utils.type_float()},
     {"name": "average_video_play_per_user", "datatype": dbt_utils.type_float()},
     {"name": "clicks", "datatype": dbt_utils.type_numeric()},
