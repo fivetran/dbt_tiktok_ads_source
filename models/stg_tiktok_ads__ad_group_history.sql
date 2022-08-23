@@ -40,7 +40,7 @@ final as (
         gender,
         languages, 
         landing_page_url,
-        row_number() over (partition by ad_group_id order by updated_at desc) = 1 as is_most_recent_record
+        row_number() over (partition by adgroup_id order by updated_at desc) = 1 as is_most_recent_record
     from fields
 )
 
