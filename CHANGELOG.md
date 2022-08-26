@@ -5,7 +5,7 @@ PR [#3](https://github.com/fivetran/dbt_tiktok_ads_source/pull/3) applies the fo
   - `tiktok_ads__ad_group_hourly_passthrough_metrics`
   - `tiktok_ads__ad_hourly_passthrough_metrics`
   - `tiktok_ads__campaign_hourly_passthrough_metrics`
-> This applies to all passthrough columns within the `dbt_snapchat_ads_source` package and not just the `tiktok_ads__ad_group_hourly_passthrough_metrics` example.
+> This applies to all passthrough columns within the `dbt_tiktok_ads_source` package and not just the `tiktok_ads__ad_group_hourly_passthrough_metrics` example.
 ```yml
 vars:
   tiktok_ads__ad_group_hourly_passthrough_metrics:
