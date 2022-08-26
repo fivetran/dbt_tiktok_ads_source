@@ -11,12 +11,13 @@ sources:
     freshness: 
       warn_after: {count: 48, period: hour}
       error_after: {count: 168, period: hour}
+    
+    config:
+      enabled: "{{ var('ad_reporting__tiktok_ads_enabled', true) }}"
 
     tables:
       - name: advertiser
         identifier: "{{ var('tiktok_ads__advertiser_identifier', 'advertiser') }}"
-        config:
-          enabled: "{{ var('ad_reporting__tiktok_ads_enabled', true) }}"
         description: Each record represents data for one advertiser.
         columns:
           - name: id
@@ -68,8 +69,6 @@ sources:
 
       - name: campaign_history
         identifier: "{{ var('tiktok_ads__campaign_history_identifier', 'campaign_history') }}"
-        config:
-          enabled: "{{ var('ad_reporting__tiktok_ads_enabled', true) }}"
         description: Each record represents a version of a TikTok campaign.
         columns:
           - name: campaign_id
@@ -99,11 +98,8 @@ sources:
           - name: split_test_variable
             description: Split Test variables. Optional values; TARGETING, BIDDING_OPTIMIZATION , CREATIVE.
 
-
       - name: adgroup_history
         identifier: "{{ var('tiktok_ads__ad_group_history_identifier', 'adgroup_history') }}"
-        config:
-          enabled: "{{ var('ad_reporting__tiktok_ads_enabled', true) }}"
         description: Each record represents a version of a TikTok ad group.
         columns:
           - name: adgroup_id
@@ -254,11 +250,8 @@ sources:
           - name: video_download
             description: Whether users can download your video ads on TikTok(cannot be updated once created). 
 
-
       - name: ad_history
         identifier: "{{ var('tiktok_ads__ad_history_identifier', 'ad_history') }}"
-        config:
-          enabled: "{{ var('ad_reporting__tiktok_ads_enabled', true) }}"
         description: Each record represents a version of a TikTok ad.
         columns:
           - name: ad_id
@@ -314,8 +307,6 @@ sources:
 
       - name: ad_report_hourly
         identifier: "{{ var('tiktok_ads__ad_report_hourly_identifier', 'ad_report_hourly') }}"
-        config:
-          enabled: "{{ var('ad_reporting__tiktok_ads_enabled', true) }}"
         description: Each record represents data for each ad for each hour.
         columns:
           - name: ad_id
@@ -432,11 +423,8 @@ sources:
           - name: _fivetran_synced
             description: Timestamp of when Fivetran synced a record. 
 
-
       - name: campaign_report_hourly
         identifier: "{{ var('tiktok_ads__campaign_report_hourly_identifier', 'campaign_report_hourly') }}"
-        config:
-          enabled: "{{ var('ad_reporting__tiktok_ads_enabled', true) }}"
         description: Each record represents data for each campaign for each hour.
         columns:
           - name: campaign_id
@@ -555,11 +543,8 @@ sources:
           - name: _fivetran_synced
             description: Timestamp of when Fivetran synced a record. 
 
-
       - name: adgroup_report_hourly
         identifier: "{{ var('tiktok_ads__ad_group_report_hourly_identifier', 'adgroup_report_hourly') }}"
-        config:
-          enabled: "{{ var('ad_reporting__tiktok_ads_enabled', true) }}"
         description: Each record represents data for each ad group for each hour.
         columns:
           - name: adgroup_id

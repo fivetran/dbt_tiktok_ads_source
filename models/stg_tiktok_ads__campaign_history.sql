@@ -15,7 +15,6 @@ fields as (
                 staging_columns=get_campaign_history_columns()
             )
         }}
-        
     from base
 ), 
 

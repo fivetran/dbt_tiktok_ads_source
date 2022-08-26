@@ -15,11 +15,6 @@ fields as (
                 staging_columns=get_ad_group_report_hourly_columns()
             )
         }}
-        
-        {% for metric in var('tiktok_ads__ad_group_hourly_passthrough_metrics', []) %}
-        , {{ metric }}
-        {% endfor %}
-
     from base
 ), 
 
@@ -53,6 +48,7 @@ final as (
         average_video_play_per_user
 
         {{ fivetran_utils.fill_pass_through_columns('tiktok_ads__ad_group_hourly_passthrough_metrics') }}
+
     from fields
 ) 
 

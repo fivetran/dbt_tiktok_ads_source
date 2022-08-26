@@ -47,19 +47,22 @@ vars:
 ## (Optional) Step 4: Additional configurations
 
 ### Passing Through Additional Metrics
-If you would like to pass through additional metrics to the staging and end models that are not by default, add the following configuration to your `dbt_project.yml` file:  
+By default, this package will select `clicks`, `impressions`, and `cost` from the source reporting tables to store into the staging models. If you would like to pass through additional metrics to the staging models, add the below configurations to your `dbt_project.yml` file. These variables allow for the pass-through fields to be aliased (`alias`) if desired, but not required. Use the below format for declaring the respective pass-through variables:
 
-```yml  
-# dbt_project.yml
+>**Note** Please ensure you exercised due diligence when adding metrics to these models. The metrics added by default (taps, impressions, and spend) have been vetted by the Fivetran team maintaining this package for accuracy. There are metrics included within the source reports, for example metric averages, which may be inaccurately represented at the grain for reports created in this package. You will want to ensure whichever metrics you pass through are indeed appropriate to aggregate at the respective reporting levels provided in this package.
 
-...
+```yml
 vars:
-    tiktok_ads__ad_group_hourly_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from tiktok_ads.adgroup_report_hourly
-    tiktok_ads__ad_hourly_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from tiktok_ads.ad_report_hourly
-    tiktok_ads__campaign_hourly_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from tiktok_ads.campaign_report_hourly
+    tiktok_ads__ad_group_hourly_passthrough_metrics: 
+      - name: "new_custom_field"
+        alias: "custom_field"
+      - name: "my_other_field"
+    tiktok_ads__ad_hourly_passthrough_metrics:
+      - name: "this_field"
+    tiktok_ads__campaign_hourly_passthrough_metrics:
+      - name: "unique_string_field"
+        alias: "field_id"
 ```
-> Please ensure you use due diligence when adding metrics to these models which will be summed upon aggregation. The metrics added by default have been vetted by the Fivetran team maintaining this package for accuracy.  You will want to ensure whichever metrics you pass through are indeed appropriate to aggregate.
-
 ### Changing the Build Schema
 By default, this package will build the TikTok Ads staging models within a schema titled (<target_schema> + `_stg_tiktok_ads`) in your target database. If this is not where you would like your TikTok Ads staging data to be written to, add the following configuration to your `dbt_project.yml` file:
 
