@@ -1,8 +1,9 @@
+{{ config(enabled=var('ad_reporting__tiktok_ads_enabled', true)) }}
+
 with base as (
 
     select *
     from {{ ref('stg_tiktok_ads__campaign_report_hourly_tmp') }}
-
 ), 
 
 fields as (
@@ -14,43 +15,43 @@ fields as (
                 staging_columns=get_campaign_report_hourly_columns()
             )
         }}
-
     from base
-
 ), 
 
 final as (
 
     select  
-        campaign_id, 
-        _fivetran_synced,
-        stat_time_hour, 
+        campaign_id,
+        cast(stat_time_hour as {{ dbt_utils.type_timestamp() }}) as stat_time_hour,
         cpc, 
-        cpm, 
-        ctr, 
-        impressions, 
-        clicks, 
-        spend, 
-        reach, 
-        conversion, 
-        cost_per_conversion, 
-        conversion_rate, 
-        likes, 
-        comments, 
-        shares, 
+        cpm,
+        ctr,
+        impressions,
+        clicks,
+        spend,
+        reach,
+        conversion,
+        cost_per_conversion,
+        conversion_rate,
+        likes,
+        comments,
+        shares,
         profile_visits,
-        follows, 
-        video_play_actions, 
-        video_watched_2_s, 
-        video_watched_6_s, 
-        video_views_p_25, 
+        follows,
+        video_play_actions,
+        video_watched_2_s,
+        video_watched_6_s,
+        video_views_p_25,
         video_views_p_50,
-        video_views_p_75,  
-        average_video_play, 
+        video_views_p_75,
+        average_video_play,
         average_video_play_per_user
-    from fields
 
+        {{ fivetran_utils.fill_pass_through_columns('tiktok_ads__campaign_hourly_passthrough_metrics') }}
+        
+    from fields
 )
 
-select * from final
+select *
+from final
 

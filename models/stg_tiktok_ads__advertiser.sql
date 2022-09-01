@@ -1,8 +1,9 @@
+{{ config(enabled=var('ad_reporting__tiktok_ads_enabled', true)) }}
+
 with base as (
 
     select *
     from {{ ref('stg_tiktok_ads__advertiser_tmp') }}
-
 ), 
 
 fields as (
@@ -16,8 +17,7 @@ fields as (
         }}
 
     from base
-
-), 
+),
 
 final as (
 
@@ -33,13 +33,12 @@ final as (
         email, 
         industry, 
         language,
-        name, 
+        name as advertiser_name, 
         phone_number, 
         telephone, 
-        timezone,
-        _fivetran_synced
+        timezone
     from fields
-
 )
 
-select * from final
+select *
+from final

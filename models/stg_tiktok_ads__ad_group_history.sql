@@ -1,8 +1,9 @@
+{{ config(enabled=var('ad_reporting__tiktok_ads_enabled', true)) }}
+
 with base as (
 
     select *
     from {{ ref('stg_tiktok_ads__ad_group_history_tmp') }}
-
 ), 
 
 fields as (
@@ -16,14 +17,13 @@ fields as (
         }}
 
     from base
-
 ), 
 
 final as (
 
-    select  
+    select
         adgroup_id as ad_group_id,
-        updated_at,
+        cast(updated_at as {{ dbt_utils.type_timestamp() }}) as updated_at,
         advertiser_id,
         campaign_id,
         action_days,
@@ -40,18 +40,9 @@ final as (
         gender,
         languages, 
         landing_page_url,
-        _fivetran_synced
+        row_number() over (partition by adgroup_id order by updated_at desc) = 1 as is_most_recent_record
     from fields
-
-), 
-
-most_recent as (
-
-    select 
-        *,
-        row_number() over (partition by ad_group_id order by updated_at desc) = 1 as is_most_recent_record
-    from final
-
 )
 
-select * from most_recent
+select * 
+from final

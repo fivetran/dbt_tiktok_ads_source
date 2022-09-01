@@ -1,8 +1,9 @@
+{{ config(enabled=var('ad_reporting__tiktok_ads_enabled', true)) }}
+
 with base as (
 
     select *
     from {{ ref('stg_tiktok_ads__campaign_history_tmp') }}
-
 ), 
 
 fields as (
@@ -14,33 +15,21 @@ fields as (
                 staging_columns=get_campaign_history_columns()
             )
         }}
-        
     from base
-
 ), 
 
 final as (
 
     select   
-        campaign_id, 
-        updated_at, 
-        advertiser_id, 
-        campaign_name, 
-        campaign_type, 
+        campaign_id,
+        cast(updated_at as {{ dbt_utils.type_timestamp() }}) as updated_at,
+        advertiser_id,
+        campaign_name,
+        campaign_type,
         split_test_variable,
-        _fivetran_synced
-
-    from fields
-
-), 
-
-most_recent as (
-
-    select 
-        *,
         row_number() over (partition by campaign_id order by updated_at desc) = 1 as is_most_recent_record
-    from final
-
+    from fields
 )
 
-select * from most_recent
+select *
+from final
