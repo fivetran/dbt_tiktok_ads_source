@@ -23,7 +23,7 @@ final as (
 
     select
         adgroup_id as ad_group_id,
-        cast(updated_at as {{ dbt_utils.type_timestamp() }}) as updated_at,
+        cast(updated_at as {{ dbt.type_timestamp() }}) as updated_at,
         advertiser_id,
         campaign_id,
         action_days,

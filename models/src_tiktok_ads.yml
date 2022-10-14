@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: tiktok_ads
-    database: "{% if target.type != 'spark' %}{{var('tiktok_ads_database', target.database)}}{% endif %}"
+    database: "{% if target.type != '!!!!!!! REPLACE 'spark' WITH 'spark','databricks' OR EQUIV !!!!!!!' %}{{var('tiktok_ads_database', target.database)}}{% endif %}"
     schema: "{{var('tiktok_ads_schema', 'tiktok_ads')}}"
 
     loader: fivetran
