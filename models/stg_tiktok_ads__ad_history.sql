@@ -23,7 +23,7 @@ final as (
 
     select  
         ad_id,
-        cast(updated_at as {{ dbt_utils.type_timestamp() }}) as updated_at,
+        cast(updated_at as {{ dbt.type_timestamp() }}) as updated_at,
         adgroup_id as ad_group_id,
         advertiser_id,
         campaign_id,
@@ -31,7 +31,7 @@ final as (
         call_to_action,
         click_tracking_url,
         impression_tracking_url,
-        {{ dbt_utils.split_part('landing_page_url', "'?'", 1) }} as base_url,
+        {{ dbt.split_part('landing_page_url', "'?'", 1) }} as base_url,
         {{ dbt_utils.get_url_host('landing_page_url') }} as url_host,
         '/' || {{ dbt_utils.get_url_path('landing_page_url') }} as url_path,
         {{ dbt_utils.get_url_parameter('landing_page_url', 'utm_source') }} as utm_source,
