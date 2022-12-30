@@ -28,8 +28,8 @@
     {"name": "video_watched_6_s", "datatype": dbt.type_numeric()}
 ] %}
 
-{{ return(columns) }}
-
 {{ fivetran_utils.add_pass_through_columns(columns, var('tiktok_ads__ad_hourly_passthrough_metrics')) }}
+
+{{ return(columns) }}
 
 {% endmacro %}
