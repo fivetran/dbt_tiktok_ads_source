@@ -36,6 +36,13 @@
     - `dbt.current_timestamp_backcompat`
     - `dbt.current_timestamp_in_utc_backcompat`
 - `packages.yml` has been updated to reflect new default `fivetran/fivetran_utils` version, previously `[">=0.3.0", "<0.4.0"]` now `[">=0.4.0", "<0.5.0"]`.
+
+## Bug Fixes
+- Adjusted the `get_ad_group_report_hourly_columns`, `get_ad_report_hourly_columns`, and `get_campaign_report_hourly_columns` macros to ensure the passthrough variables are included in the returned columns and propogate within downstream models. ([#5](https://github.com/fivetran/dbt_tiktok_ads_source/pull/5))
+
+## Contributors
+- [@andysmv](https://github.com/andysmv) ([#5](https://github.com/fivetran/dbt_tiktok_ads_source/pull/5))
+
 # dbt_tiktok_ads_source v0.2.0
 PR [#3](https://github.com/fivetran/dbt_tiktok_ads_source/pull/3) applies the following updates:
 ## 🎉 Feature Enhancements 🎉
