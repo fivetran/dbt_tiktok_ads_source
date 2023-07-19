@@ -18,6 +18,7 @@
     {"name": "interest_category_v_2", "datatype": dbt.type_string()},
     {"name": "action_categories", "datatype": dbt.type_string()},
     {"name": "age", "datatype": dbt.type_string()},
+    {"name": "age_groups", "datatype": dbt.type_string()},
     {"name": "languages", "datatype": dbt.type_string()}
 
 ] %}

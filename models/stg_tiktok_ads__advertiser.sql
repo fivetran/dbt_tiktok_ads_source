@@ -34,8 +34,8 @@ final as (
         industry, 
         language,
         name as advertiser_name, 
-        phone_number, 
-        telephone, 
+        coalesce(phone_number, cellphone_number) as cellphone_number, 
+        coalesce(telephone, telephone_number) as telephone_number,
         timezone
     from fields
 )

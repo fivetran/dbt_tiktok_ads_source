@@ -26,6 +26,10 @@ sources:
             description: Advertiser address information
           - name: balance
             description: Account available balance
+          - name: cellphone_number
+            description: > 
+              Contact mobile number, desensitised data.
+              This is the newest version of the field `phone_number`, which was renamed after the Tiktok Ads v1.3 API release.
           - name: company
             description: Advertiser's company name
           - name: contacter
@@ -51,7 +55,10 @@ sources:
           - name: name
             description: Advertiser name
           - name: phone_number
-            description: Contact mobile number, desensitised data
+            description: > 
+              Contact mobile number, desensitised data.
+              IMPORTANT: This field will not be populated for connectors utilizing the Tiktok Ads v1.3 API version, as the column was renamed. 
+              The new column name is `cellphone_number`.
           - name: promotion_area
             description: Operation area
           - name: reason 
@@ -61,7 +68,14 @@ sources:
           - name: status
             description: Advertiser status
           - name: telephone
-            description: Fixed phone number, desensitised data
+            description: >
+              Fixed phone number, desensitised data
+              IMPORTANT: This field will not be populated for connectors utilizing the Tiktok Ads v1.3 API version, as the column was renamed. 
+              The new column name is `telephone_number`.
+          - name: telephone_number
+            description: >
+              Fixed phone number, desensitised data
+              This is the newest version of the field `telephone`, which was renamed after the Tiktok Ads v1.3 API release.
           - name: timezone
             description: Ad account time zone including GMT offset
           - name: _fivetran_synced
@@ -117,7 +131,14 @@ sources:
           - name: adgroup_name
             description: Ad group name. Character limit is 512 and cannot contain emoji.
           - name: age
-            description: Age groups you want to target. 
+            description: >
+              Age groups you want to target. 
+              IMPORTANT: This field will not be populated for connectors utilizing the Tiktok Ads v1.3 API version, as the column was renamed. 
+              The new column name is `age_group`.
+          - name: age_groups
+            description: >
+              Age groups you want to target.
+              This is the newest version of the field `age`, which was renamed after the Tiktok Ads v1.3 API release.
           - name: android_osv
             description: Minimum Android version. 
           - name: app_download_url

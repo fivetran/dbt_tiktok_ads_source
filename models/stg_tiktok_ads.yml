@@ -39,9 +39,9 @@ models:
         description: License preview address, the link is valid for an hour by default.
       - name: advertiser_name
         description: Advertiser name
-      - name: phone_number
+      - name: cellphone_number
         description: Contact mobile number, desensitised data
-      - name: telephone
+      - name: telephone_number
         description: Fixed phone number, desensitised data
       - name: timezone
         description: Ad account time zone including GMT offset
@@ -71,7 +71,7 @@ models:
         description: Action days
       - name: ad_group_name
         description: Ad group name. Character limit is 512 and cannot contain emoji.
-      - name: age
+      - name: age_groups
         description: Age groups you want to target. 
       - name: audience_type
         description: Audience Type
