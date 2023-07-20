@@ -1,9 +1,16 @@
-# dbt_tiktok_ads_source v0.UPDATE.UPDATE
-
- ## Under the Hood:
-
+# dbt_tiktok_ads_source v0.4.0
+[PR #10](https://github.com/fivetran/dbt_tiktok_ads_source/pull/10) applies the following updates:
+## 🚨 Breaking Changes 🚨
+- In the [July 2023 connector update for TikTok Ads](https://fivetran.com/docs/applications/tiktok-ads/changelog), we upgraded the connector to the v1.3 API. As a result the dependent fields and field names from the downstream staging models have changed.
+- In `stg_tiktok_ads__ad_group_history`, `age` has been renamed as `age_groups`.
+- In `stg_tiktok_ads__advertiser`, `phone_number` has been renamed as `cellphone_number`, and `telephone` has been renamed as `telephone_number`.
+- We coalesced the old API field names with these renamed fields to ensure backwards compatibility for these fields. 
+ 
+## Under the Hood:
 - Incorporated the new `fivetran_utils.drop_schemas_automation` macro into the end of each Buildkite integration test job.
 - Updated the pull request [templates](/.github).
+- Seed files were also renamed with the newest version of the fields, in case we decide to bring them in with future versions of the package.
+
 # dbt_tiktok_ads_source v0.3.0
 
 ## 🚨 Breaking Changes 🚨:
