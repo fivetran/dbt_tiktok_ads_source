@@ -6,7 +6,7 @@
   - In `stg_tiktok_ads__advertiser`, `phone_number` has been renamed as `cellphone_number`, and `telephone` has been renamed as `telephone_number`.
 - **Note**: We coalesced the old API field names with these renamed fields to ensure backwards compatibility for these fields. 
  
-## Under the Hood:
+## 🔧 Under the Hood 🔩
 - Incorporated the new `fivetran_utils.drop_schemas_automation` macro into the end of each Buildkite integration test job.
 - Updated the pull request [templates](/.github).
 - Seed files were also renamed with the newest version of the fields, in case we decide to bring them in with future versions of the package.
