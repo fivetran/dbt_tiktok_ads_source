@@ -1,3 +1,13 @@
+# dbt_tiktok_ads_source v0.5.0
+[PR #12](https://github.com/fivetran/dbt_tiktok_ads_source/pull/12) includes the following updates:
+## Feature update 🎉
+- Unioning capability! This adds the ability to union source data from multiple tiktok_ads connectors. Refer to the [README](https://github.com/fivetran/dbt_tiktok_ads_source/blob/main/README.md) for more details.
+
+## Under the hood 🚘
+- Updated tmp models to union source data using the `fivetran_utils.union_data` macro. 
+- To distinguish which source each field comes from, added `source_relation` column in each staging model and applied the `fivetran_utils.source_relation` macro.
+- Updated tests to account for the new `source_relation` column.
+
 # dbt_tiktok_ads_source v0.4.0
 [PR #10](https://github.com/fivetran/dbt_tiktok_ads_source/pull/10) applies the following updates:
 ## 🚨 Breaking Changes 🚨

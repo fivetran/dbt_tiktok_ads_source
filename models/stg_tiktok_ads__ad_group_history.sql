@@ -1,3 +1,5 @@
+ADD source_relation WHERE NEEDED + CHECK JOINS AND WINDOW FUNCTIONS! (Delete this line when done.)
+
 {{ config(enabled=var('ad_reporting__tiktok_ads_enabled', true)) }}
 
 with base as (
@@ -16,12 +18,19 @@ fields as (
             )
         }}
 
+    
+        {{ fivetran_utils.source_relation(
+            union_schema_variable='tiktok_ads_union_schemas', 
+            union_database_variable='tiktok_ads_union_databases') 
+        }}
+
     from base
 ), 
 
 final as (
 
     select
+        source_relation,
         adgroup_id as ad_group_id,
         cast(updated_at as {{ dbt.type_timestamp() }}) as updated_at,
         advertiser_id,
@@ -40,7 +49,7 @@ final as (
         gender,
         languages, 
         landing_page_url,
-        row_number() over (partition by adgroup_id order by updated_at desc) = 1 as is_most_recent_record
+        row_number() over (partition by source_relation, adgroup_id order by updated_at desc) = 1 as is_most_recent_record
     from fields
 )
 

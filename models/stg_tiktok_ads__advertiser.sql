@@ -1,3 +1,5 @@
+ADD source_relation WHERE NEEDED + CHECK JOINS AND WINDOW FUNCTIONS! (Delete this line when done.)
+
 {{ config(enabled=var('ad_reporting__tiktok_ads_enabled', true)) }}
 
 with base as (
@@ -16,12 +18,19 @@ fields as (
             )
         }}
 
+    
+        {{ fivetran_utils.source_relation(
+            union_schema_variable='tiktok_ads_union_schemas', 
+            union_database_variable='tiktok_ads_union_databases') 
+        }}
+
     from base
 ),
 
 final as (
 
-    select   
+    select
+        source_relation,   
         id as advertiser_id, 
         address, 
         balance, 
