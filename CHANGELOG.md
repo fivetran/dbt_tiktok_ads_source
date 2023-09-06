@@ -1,5 +1,20 @@
 # dbt_tiktok_ads_source v0.5.0
 [PR #12](https://github.com/fivetran/dbt_tiktok_ads_source/pull/12) includes the following updates:
+## Breaking changes
+- Updated the source identifier format for consistency with other packages and for compatibility with the `fivetran_utils.union_data` macro. Identifiers now are:
+
+| current  | previous |
+|----------|----------|
+|tiktok_ads_adgroup_history_identifier | tiktok_ads__ad_group_history_identifier |
+|tiktok_ads_ad_history_identifier | tiktok_ads__ad_history_identifier
+|tiktok_ads_advertiser_identifier | tiktok_ads__advertiser_identifier|
+|tiktok_ads_campaign_history_identifier | tiktok_ads__campaign_history_identifier|
+|tiktok_ads_ad_report_hourly_identifier | tiktok_ads__ad_report_hourly_identifier|
+|tiktok_ads_ad_group_report_hourly_identifier | tiktok_ads__ad_group_report_hourly_identifier|
+|tiktok_ads_campaign_report_hourly_identifier | tiktok_ads__campaign_report_hourly_identifier|
+
+- If you are using the previous identifier, be sure to update to the current version!
+
 ## Feature update 🎉
 - Unioning capability! This adds the ability to union source data from multiple tiktok_ads connectors. Refer to the [README](https://github.com/fivetran/dbt_tiktok_ads_source/blob/main/README.md) for more details.
 
