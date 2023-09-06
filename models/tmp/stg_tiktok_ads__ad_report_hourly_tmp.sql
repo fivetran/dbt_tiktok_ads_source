@@ -7,7 +7,7 @@
         schema_variable='tiktok_ads_schema', 
         default_database=target.database,
         default_schema='tiktok_ads',
-        default_variable='ad_report_hourly_source',
+        default_variable='ad_report_hourly',
         union_schema_variable='tiktok_ads_union_schemas',
         union_database_variable='tiktok_ads_union_databases'
     )
