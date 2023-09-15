@@ -113,7 +113,7 @@ sources:
             description: Split Test variables. Optional values; TARGETING, BIDDING_OPTIMIZATION , CREATIVE.
 
       - name: adgroup_history
-        identifier: "{{ var('tiktok_ads_adgroup_history_identifier', 'adgroup_history') }}"
+        identifier: "{{ var('tiktok_ads_ad_group_history_identifier', 'adgroup_history') }}"
         description: Each record represents a version of a TikTok ad group.
         columns:
           - name: adgroup_id
