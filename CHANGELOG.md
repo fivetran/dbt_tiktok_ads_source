@@ -10,7 +10,7 @@
 |tiktok_ads_advertiser_identifier | tiktok_ads__advertiser_identifier|
 |tiktok_ads_campaign_history_identifier | tiktok_ads__campaign_history_identifier|
 |tiktok_ads_ad_report_hourly_identifier | tiktok_ads__ad_report_hourly_identifier|
-|tiktok_ads_ad_group_report_hourly_identifier | tiktok_ads__ad_group_report_hourly_identifier|
+|tiktok_ads_adgroup_report_hourly_identifier | tiktok_ads__ad_group_report_hourly_identifier|
 |tiktok_ads_campaign_report_hourly_identifier | tiktok_ads__campaign_report_hourly_identifier|
 
 - If you are using the previous identifier, be sure to update to the current version!
