@@ -16,12 +16,19 @@ fields as (
             )
         }}
 
+    
+        {{ fivetran_utils.source_relation(
+            union_schema_variable='tiktok_ads_union_schemas', 
+            union_database_variable='tiktok_ads_union_databases') 
+        }}
+
     from base
 ), 
 
 final as (
 
-    select  
+    select
+        source_relation,  
         ad_id,
         cast(updated_at as {{ dbt.type_timestamp() }}) as updated_at,
         adgroup_id as ad_group_id,
@@ -40,7 +47,7 @@ final as (
         {{ dbt_utils.get_url_parameter('landing_page_url', 'utm_content') }} as utm_content,
         {{ dbt_utils.get_url_parameter('landing_page_url', 'utm_term') }} as utm_term,
         landing_page_url,
-        row_number() over (partition by ad_id order by updated_at desc) = 1 as is_most_recent_record
+        row_number() over (partition by source_relation, ad_id order by updated_at desc) = 1 as is_most_recent_record
     from fields
 )
 

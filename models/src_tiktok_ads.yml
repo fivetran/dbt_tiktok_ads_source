@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: tiktok_ads
+  - name: tiktok_ads # This source will only be used if you are using a single tiktok_ads source connector. If multiple sources are being unioned, their tables will be directly referenced via adapter.get_relation.
     database: "{% if target.type != 'spark' %}{{var('tiktok_ads_database', target.database)}}{% endif %}"
     schema: "{{var('tiktok_ads_schema', 'tiktok_ads')}}"
 
@@ -17,7 +17,7 @@ sources:
 
     tables:
       - name: advertiser
-        identifier: "{{ var('tiktok_ads__advertiser_identifier', 'advertiser') }}"
+        identifier: "{{ var('tiktok_ads_advertiser_identifier', 'advertiser') }}"
         description: Each record represents data for one advertiser.
         columns:
           - name: id
@@ -82,7 +82,7 @@ sources:
             description: Timestamp of when Fivetran synced a record. 
 
       - name: campaign_history
-        identifier: "{{ var('tiktok_ads__campaign_history_identifier', 'campaign_history') }}"
+        identifier: "{{ var('tiktok_ads_campaign_history_identifier', 'campaign_history') }}"
         description: Each record represents a version of a TikTok campaign.
         columns:
           - name: campaign_id
@@ -113,7 +113,7 @@ sources:
             description: Split Test variables. Optional values; TARGETING, BIDDING_OPTIMIZATION , CREATIVE.
 
       - name: adgroup_history
-        identifier: "{{ var('tiktok_ads__ad_group_history_identifier', 'adgroup_history') }}"
+        identifier: "{{ var('tiktok_ads_adgroup_history_identifier', 'adgroup_history') }}"
         description: Each record represents a version of a TikTok ad group.
         columns:
           - name: adgroup_id
@@ -272,7 +272,7 @@ sources:
             description: Whether users can download your video ads on TikTok(cannot be updated once created). 
 
       - name: ad_history
-        identifier: "{{ var('tiktok_ads__ad_history_identifier', 'ad_history') }}"
+        identifier: "{{ var('tiktok_ads_ad_history_identifier', 'ad_history') }}"
         description: Each record represents a version of a TikTok ad.
         columns:
           - name: ad_id
@@ -327,7 +327,7 @@ sources:
             description: The video ID.
 
       - name: ad_report_hourly
-        identifier: "{{ var('tiktok_ads__ad_report_hourly_identifier', 'ad_report_hourly') }}"
+        identifier: "{{ var('tiktok_ads_ad_report_hourly_identifier', 'ad_report_hourly') }}"
         description: Each record represents data for each ad for each hour.
         columns:
           - name: ad_id
@@ -445,7 +445,7 @@ sources:
             description: Timestamp of when Fivetran synced a record. 
 
       - name: campaign_report_hourly
-        identifier: "{{ var('tiktok_ads__campaign_report_hourly_identifier', 'campaign_report_hourly') }}"
+        identifier: "{{ var('tiktok_ads_campaign_report_hourly_identifier', 'campaign_report_hourly') }}"
         description: Each record represents data for each campaign for each hour.
         columns:
           - name: campaign_id
@@ -565,7 +565,7 @@ sources:
             description: Timestamp of when Fivetran synced a record. 
 
       - name: adgroup_report_hourly
-        identifier: "{{ var('tiktok_ads__ad_group_report_hourly_identifier', 'adgroup_report_hourly') }}"
+        identifier: "{{ var('tiktok_ads_adgroup_report_hourly_identifier', 'adgroup_report_hourly') }}"
         description: Each record represents data for each ad group for each hour.
         columns:
           - name: adgroup_id
