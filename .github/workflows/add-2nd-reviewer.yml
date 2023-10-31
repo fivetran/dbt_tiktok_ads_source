@@ -1,4 +1,4 @@
-name: 'auto release'
+name: '2nd reviewer'
 on:
   pull_request_review:
     types: [submitted]
