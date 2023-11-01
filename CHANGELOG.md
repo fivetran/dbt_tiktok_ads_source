@@ -1,3 +1,8 @@
+# dbt_tiktok_ads_source v0.5.1
+[PR #14](https://github.com/fivetran/dbt_tiktok_ads_source/pull/14) includes the following updates:
+## Under the Hood:
+- Updates the [DECISIONLOG](DECISIONLOG.md) to clarify why there exist differences among aggregations across different grains.
+
 # dbt_tiktok_ads_source v0.5.0
 [PR #12](https://github.com/fivetran/dbt_tiktok_ads_source/pull/12) includes the following updates:
 ## Breaking changes
