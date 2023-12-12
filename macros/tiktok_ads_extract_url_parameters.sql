@@ -1,6 +1,6 @@
 {% macro tiktok_ads_extract_url_parameter(field, url_parameter) -%}
 
-{{ adapter.dispatch('tiktok_ads_extract_url_parameter', 'tiktok_ads_source') (field, url_parameter) }}
+{{ return(adapter.dispatch('tiktok_ads_extract_url_parameter', 'tiktok_ads_source') (field, url_parameter)) }}
 
 {% endmacro %}
 
