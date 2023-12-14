@@ -1,3 +1,12 @@
+# dbt_tiktok_ads_source v0.5.2
+
+[PR #19](https://github.com/fivetran/dbt_tiktok_ads_source/pull/19) includes the following updates:
+## Bug Fixes
+- This package now leverages the new `tiktok_ads_extract_url_parameter()` macro for use in parsing out url parameters. This was added to create special logic for Databricks instances not supported by `dbt_utils.get_url_parameter()`.
+  - This macro will be replaced with the `fivetran_utils.extract_url_parameter()` macro in the next breaking change of this package.
+## Under the Hood
+- Included auto-releaser GitHub Actions workflow to automate future releases.
+
 # dbt_tiktok_ads_source v0.5.1
 [PR #14](https://github.com/fivetran/dbt_tiktok_ads_source/pull/14) includes the following updates:
 ## Under the Hood:
