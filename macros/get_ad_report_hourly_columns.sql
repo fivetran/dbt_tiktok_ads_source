@@ -16,6 +16,7 @@
     {"name": "impressions", "datatype": dbt.type_numeric()},
     {"name": "likes", "datatype": dbt.type_numeric()},
     {"name": "profile_visits", "datatype": dbt.type_numeric()},
+    {"name": "real_time_conversion", "datatype": dbt.type_numeric()},
     {"name": "reach", "datatype": dbt.type_numeric()},
     {"name": "shares", "datatype": dbt.type_numeric()},
     {"name": "spend", "datatype": dbt.type_numeric()},
