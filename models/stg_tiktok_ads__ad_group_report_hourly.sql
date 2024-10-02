@@ -37,7 +37,7 @@ final as (
         coalesce(clicks, 0) as clicks, 
         coalesce(spend, 0) as spend, 
         coalesce(reach, 0) as reach, 
-        coalesce(conversion, 0) as conversions, 
+        coalesce(conversion, 0) as conversion, 
         cost_per_conversion, 
         conversion_rate, 
         coalesce(likes, 0) as likes,
@@ -53,7 +53,7 @@ final as (
         coalesce(video_views_p_75, 0) as video_views_p_75,
         average_video_play, 
         average_video_play_per_user,
-        coalesce(real_time_conversion, 0) as real_time_conversions,
+        coalesce(real_time_conversion, 0) as real_time_conversion,
         coalesce(total_purchase_value, 0) as total_purchase_value,
         coalesce(total_sales_lead_value, 0) as total_sales_lead_value
 

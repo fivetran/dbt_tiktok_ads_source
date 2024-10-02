@@ -263,6 +263,12 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad. 
+      - name: real_time_conversion
+        description: Number of times your ad resulted in the optimization event you selected.
+      - name: total_purchase_value
+        description: The total value of purchase events that occurred in your app that were recorded by your measurement partner.
+      - name: total_sales_lead_value
+        description: The monetary worth or potential value assigned to a lead generated through ads.
 
 
   - name: stg_tiktok_ads__ad_group_report_hourly
@@ -341,6 +347,12 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
+      - name: real_time_conversion
+        description: Number of times your ad resulted in the optimization event you selected.
+      - name: total_purchase_value
+        description: The total value of purchase events that occurred in your app that were recorded by your measurement partner.
+      - name: total_sales_lead_value
+        description: The monetary worth or potential value assigned to a lead generated through ads.
 
   
   - name: stg_tiktok_ads__campaign_report_hourly
@@ -419,3 +431,9 @@ models:
         description: The estimated total amount of money you've spent on your campaign, ad group or ad during its schedule.
       - name: likes
         description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
+      - name: real_time_conversion
+        description: Number of times your ad resulted in the optimization event you selected.
+      - name: total_purchase_value
+        description: The total value of purchase events that occurred in your app that were recorded by your measurement partner.
+      - name: total_sales_lead_value
+        description: The monetary worth or potential value assigned to a lead generated through ads.
