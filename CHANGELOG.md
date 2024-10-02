@@ -3,15 +3,17 @@
 
 ## Feature Updates: Conversion Support!
 - We have added the following source fields to each `stg_tiktok_ads__<entity>_report_history` model (`ad`, `ad_group`, `campaign`):
-  - `conversion`: The number of conversions you've received, across your conversion actions. Conversions are measured with conversion tracking and may include [modeled](https://support.google.com/google-ads/answer/10081327?sjid=12862894247631803415-NC) conversions in cases where you are not able to observe all conversions that took place. You can use this column to see how often your ads led customers to actions that you’ve defined as valuable for your business.
-  - `conversions_value`: The sum of monetary values for your `conversions`. You have to enter a value in the Google Ads UI for your conversion actions to make this metric useful.
-  - `view_through_conversions`: For video campaigns, view-through conversions tell you when an _impression_ of your video ad leads to a conversion on your site. The last impression of a video ad will get credit for the view-through conversion. An impression is different than a “view” of a video ad. A “view” is counted when someone watches 30 seconds (or the whole ad if it’s shorter than 30 seconds) or clicks on a part of the ad. A “view” that leads to a conversion is counted in the `conversions` column.
-- In the event that you were already passing the above fields in via our [passthrough columns](https://github.com/fivetran/dbt_google_ads_source?tab=readme-ov-file#passing-through-additional-metrics), the package will dynamically avoid "duplicate column" errors.
-> The above new field additions are 🚨 **breaking changes** 🚨 for users who were not already bringing in conversion fields via passthrough columns.
+  - `real_time_conversion`: Number of times your ad resulted in the optimization event you selected.
+  - `total_purchase_value`: The total value of purchase events that occurred in your app that were recorded by your measurement partner.
+  - `total_sales_lead_value`: The monetary worth or potential value assigned to a lead generated through ads.
+- In the event that you were already passing the above fields in via our [passthrough columns](https://github.com/fivetran/dbt_tiktok_ads_source?tab=readme-ov-file#passing-through-additional-metrics), the package will dynamically avoid "duplicate column" errors.
+> The above new field additions are **breaking changes** for users who were not already bringing in conversion fields via passthrough columns.
 
-## Under the Hood
-- Updated the package maintainer PR template.
-- Created `google_ads_fill_pass_through_columns` and `google_ads_add_pass_through_columns` macros to ensure that the new conversion fields are backwards compatible with users who have already included them via passthrough fields.
+## Breaking Changes
+- Update `conversion` to be an integer rather than a numeric data type, as is the expected behavior of the field.
+
+## Under the Hood 
+- Created `tiktok_ads_fill_pass_through_columns` and `tiktok_ads_add_pass_through_columns` macros to ensure that the new conversion fields are backwards compatible with users who have already included them via passthrough fields.
 
 ## Contributors
 - [Seer Interactive](https://www.seerinteractive.com/?utm_campaign=Fivetran%20%7C%20Models&utm_source=Fivetran&utm_medium=Fivetran%20Documentation)
