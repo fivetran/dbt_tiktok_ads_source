@@ -1,5 +1,5 @@
 # dbt_tiktok_ads_source v0.6.0
-[PR #22](https://github.com/fivetran/dbt_tiktok_ads_source/pull/22) includes the following updates:
+[PR #23](https://github.com/fivetran/dbt_tiktok_ads_source/pull/23) includes the following updates:
 
 ## Feature Updates: Conversion Support!
 - We have added the following source fields to each `stg_tiktok_ads__<entity>_report_history` model (`ad`, `ad_group`, `campaign`):
