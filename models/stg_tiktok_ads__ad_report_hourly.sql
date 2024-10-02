@@ -33,28 +33,32 @@ final as (
         cpc, 
         cpm, 
         ctr, 
-        impressions, 
-        clicks, 
-        spend, 
+        coalesce(impressions, 0) as impressions,
+        coalesce(clicks, 0) as clicks, 
+        coalesce(spend, 0) as spend, 
         reach, 
-        conversion, 
+        coalesce(conversion, 0) as conversion,
         cost_per_conversion, 
         conversion_rate, 
-        likes, 
-        comments, 
-        shares, 
-        profile_visits,
-        follows, 
-        video_play_actions, 
-        video_watched_2_s, 
-        video_watched_6_s, 
-        video_views_p_25, 
-        video_views_p_50,
-        video_views_p_75,  
+        coalesce(likes, 0) as likes,
+        coalesce(comments, 0) as comments,
+        coalesce(shares, 0) as shares,
+        coalesce(profile_visits, 0) as profile_visits,
+        coalesce(follows, 0) as follows,
+        coalesce(video_play_actions, 0) as video_play_actions,
+        coalesce(video_watched_2_s, 0) as video_watched_2_s,
+        coalesce(video_watched_6_s, 0) as video_watched_6_s,
+        coalesce(video_views_p_25, 0) as video_views_p_25,
+        coalesce(video_views_p_50, 0) as video_views_p_50,
+        coalesce(video_views_p_75, 0) as video_views_p_75,
         average_video_play, 
-        average_video_play_per_user
+        average_video_play_per_user,
+        coalesce(real_time_conversion, 0) as real_time_conversion,
+        coalesce(total_purchase_value, 0) as total_purchase_value,
+        coalesce(total_sales_lead_value, 0) as total_sales_lead_value
 
-        {{ fivetran_utils.fill_pass_through_columns('tiktok_ads__ad_hourly_passthrough_metrics') }}
+        {{ tiktok_ads_fill_pass_through_columns(pass_through_fields=var('tiktok_ads__ad_hourly_passthrough_metrics'), except_fields=["real_time_conversion", "total_purchase_value", "total_sales_lead_value"]) }}
+
     from fields
 )
 
