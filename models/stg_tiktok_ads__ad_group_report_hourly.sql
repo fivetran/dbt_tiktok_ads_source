@@ -57,7 +57,7 @@ final as (
         coalesce(total_purchase_value, 0) as total_purchase_value,
         coalesce(total_sales_lead_value, 0) as total_sales_lead_value
 
-        {{ tiktok_ads_fill_pass_through_columns(pass_through_fields=var('tiktok_ads__ad_group_hourly_passthrough_metrics')), except_fields=["real_time_conversion", "total_purchase_value", "total_sales_lead_value"] }}
+        {{ tiktok_ads_fill_pass_through_columns(pass_through_fields=var('tiktok_ads__ad_group_hourly_passthrough_metrics'), except_fields=["real_time_conversion", "total_purchase_value", "total_sales_lead_value"]) }}
 
     from fields
 ) 
