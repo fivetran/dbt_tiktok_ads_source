@@ -2,22 +2,21 @@
 [PR #23](https://github.com/fivetran/dbt_tiktok_ads_source/pull/23) includes the following updates:
 
 ## Feature Updates: Conversion Support!
-- We have added the following source fields to each `stg_tiktok_ads__<entity>_report_history` model (`ad`, `ad_group`, `campaign`):
+- We have added the following source fields to each `stg_tiktok_ads__<entity>_report_hourly` model (`ad`, `ad_group`, `campaign`):
   - `real_time_conversion`: Number of times your ad resulted in the optimization event you selected.
   - `total_purchase_value`: The total value of purchase events that occurred in your app that were recorded by your measurement partner.
   - `total_sales_lead_value`: The monetary worth or potential value assigned to a lead generated through ads.
 - In the event that you were already passing the above fields in via our [passthrough columns](https://github.com/fivetran/dbt_tiktok_ads_source?tab=readme-ov-file#passing-through-additional-metrics), the package will dynamically avoid "duplicate column" errors.
 > The above new field additions are **breaking changes** for users who were not already bringing in conversion fields via passthrough columns.
 
-## Breaking Changes
-- Update `conversion` to be an integer rather than a numeric data type, as is the expected behavior of the field.
-
 ## Under the Hood 
 - Created `tiktok_ads_fill_pass_through_columns` and `tiktok_ads_add_pass_through_columns` macros to ensure that the new conversion fields are backwards compatible with users who have already included them via passthrough fields.
+- Updated `conversion` to be an integer rather than a numeric data type, as is the expected behavior of the field. **This is a breaking change.**
+- In each `stg_tiktok_ads__<entity>_report_hourly` model, coalesced every metric field with `0` (except fields representing averages).
+- Updated seed data to adequately test new field additions in integration tests.
 
 ## Contributors
 - [Seer Interactive](https://www.seerinteractive.com/?utm_campaign=Fivetran%20%7C%20Models&utm_source=Fivetran&utm_medium=Fivetran%20Documentation)
-
 
 # dbt_tiktok_ads_source v0.5.2
 [PR #19](https://github.com/fivetran/dbt_tiktok_ads_source/pull/19) includes the following updates:
