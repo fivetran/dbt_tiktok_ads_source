@@ -14,6 +14,7 @@
 - Updated `conversion` to be an integer rather than a numeric data type, as is the expected behavior of the field. **This is a breaking change.**
 - In each `stg_tiktok_ads__<entity>_report_hourly` model, coalesced every metric field with `0` (except fields representing averages).
 - Updated seed data to adequately test new field additions in integration tests.
+- Removed yml descriptions for nonexistent columns.
 
 ## Contributors
 - [Seer Interactive](https://www.seerinteractive.com/?utm_campaign=Fivetran%20%7C%20Models&utm_source=Fivetran&utm_medium=Fivetran%20Documentation)

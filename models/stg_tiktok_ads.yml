@@ -235,14 +235,10 @@ models:
         description: The number of shares your video creative received within 1 day of a user seeing a paid ad.
       - name: clicks
         description: The number of clicks on your ads.
-      - name: cost_per_1000_reached
-        description: The average cost to reach 1,000 unique users. This metric is estimated.
       - name: video_views_p_25
         description: The number of times your video was played at 25% of its length. Replays will not be counted.
       - name: reach
         description: The number of unique users who saw your ads at least once. This metric is estimated.
-      - name: profile_visits_rate
-        description: The rate of profile visits per impression the paid ad drove during the campaign. This metric is only for Boosted TikToks.
       - name: average_video_play
         description: The average time your video was played per single video view, including any time spent replaying the video.
       - name: average_video_play_per_user
@@ -319,14 +315,10 @@ models:
         description: The number of shares your video creative received within 1 day of a user seeing a paid ad.
       - name: clicks
         description: The number of clicks on your ads.
-      - name: cost_per_1000_reached
-        description: The average cost to reach 1,000 unique users. This metric is estimated.
       - name: video_views_p_25
         description: The number of times your video was played at 25% of its length. Replays will not be counted.
       - name: reach
         description: The number of unique users who saw your ads at least once. This metric is estimated.
-      - name: profile_visits_rate
-        description: The rate of profile visits per impression the paid ad drove during the campaign. This metric is only for Boosted TikToks.
       - name: average_video_play
         description: The average time your video was played per single video view, including any time spent replaying the video.
       - name: average_video_play_per_user
@@ -403,14 +395,10 @@ models:
         description: The number of shares your video creative received within 1 day of a user seeing a paid ad.
       - name: clicks
         description: The number of clicks on your ads.
-      - name: cost_per_1000_reached
-        description: The average cost to reach 1,000 unique users. This metric is estimated.
       - name: video_views_p_25
         description: The number of times your video was played at 25% of its length. Replays will not be counted.
       - name: reach
         description: The number of unique users who saw your ads at least once. This metric is estimated.
-      - name: profile_visits_rate
-        description: The rate of profile visits per impression the paid ad drove during the campaign. This metric is only for Boosted TikToks.
       - name: average_video_play
         description: The average time your video was played per single video view, including any time spent replaying the video.
       - name: average_video_play_per_user
