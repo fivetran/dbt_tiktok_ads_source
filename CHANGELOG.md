@@ -1,7 +1,7 @@
 # dbt_tiktok_ads_source v0.6.0
-[PR #23](https://github.com/fivetran/dbt_tiktok_ads_source/pull/23) includes the following updates:
+[PR #23](https://github.com/fivetran/dbt_tiktok_ads_source/pull/23) includes the following **BREAKING CHANGE** updates:
 
-## Feature Updates: Conversion Support!
+## Feature Updates: Conversion Support
 - We have added the following source fields to each `stg_tiktok_ads__<entity>_report_hourly` model (`ad`, `ad_group`, `campaign`):
   - `real_time_conversion`: Number of times your ad resulted in the optimization event you selected.
   - `total_purchase_value`: The total value of purchase events that occurred in your app that were recorded by your measurement partner.
