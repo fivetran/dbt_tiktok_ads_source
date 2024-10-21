@@ -443,6 +443,12 @@ sources:
             description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
           - name: _fivetran_synced
             description: Timestamp of when Fivetran synced a record. 
+          - name: real_time_conversion
+            description: Number of times your ad resulted in the optimization event you selected.
+          - name: total_purchase_value
+            description: The total value of purchase events that occurred in your app that were recorded by your measurement partner.
+          - name: total_sales_lead_value
+            description: The monetary worth or potential value assigned to a lead generated through ads.
 
       - name: campaign_report_hourly
         identifier: "{{ var('tiktok_ads_campaign_report_hourly_identifier', 'campaign_report_hourly') }}"
@@ -563,6 +569,12 @@ sources:
             description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
           - name: _fivetran_synced
             description: Timestamp of when Fivetran synced a record. 
+          - name: real_time_conversion
+            description: Number of times your ad resulted in the optimization event you selected.
+          - name: total_purchase_value
+            description: The total value of purchase events that occurred in your app that were recorded by your measurement partner.
+          - name: total_sales_lead_value
+            description: The monetary worth or potential value assigned to a lead generated through ads.
 
       - name: adgroup_report_hourly
         identifier: "{{ var('tiktok_ads_adgroup_report_hourly_identifier', 'adgroup_report_hourly') }}"
@@ -682,3 +694,9 @@ sources:
             description: The number of likes your video creative received within 1 day of a user seeing a paid ad.
           - name: _fivetran_synced
             description: Timestamp of when Fivetran synced a record. 
+          - name: real_time_conversion
+            description: Number of times your ad resulted in the optimization event you selected.
+          - name: total_purchase_value
+            description: The total value of purchase events that occurred in your app that were recorded by your measurement partner.
+          - name: total_sales_lead_value
+            description: The monetary worth or potential value assigned to a lead generated through ads.
