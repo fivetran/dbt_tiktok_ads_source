@@ -1,4 +1,6 @@
-<p align="center">
+# Tiktok Ads Source dbt Package ([Docs](https://fivetran.github.io/dbt_tiktok_ads_source/))
+
+<p align="left">
     <a alt="License"
         href="https://github.com/fivetran/dbt_tiktok_ads_source/blob/main/LICENSE">
         <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
@@ -10,7 +12,6 @@
         <img src="https://img.shields.io/badge/Contributions-welcome-blueviolet" /></a>
 </p>
 
-# Tiktok Ads Source dbt Package ([Docs](https://fivetran.github.io/dbt_tiktok_ads_source/))
 ## What does this dbt package do?
 - Materializes [Tiktok Ads staging tables](https://fivetran.github.io/dbt_tiktok_ads_source/#!/overview/tiktok-ads-source/models/?g_v=1) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/tiktok-ads/#schemainformation). These staging tables clean, test, and prepare your Tiktok Ads data from [Fivetran's connector](https://fivetran.com/docs/applications/tiktok-ads) for analysis by doing the following:
   - Name columns for consistency across all packages and for easier analysis
