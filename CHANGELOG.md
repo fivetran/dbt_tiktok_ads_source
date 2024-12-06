@@ -1,3 +1,9 @@
+# dbt_tiktok_ads_source v0.7.0
+[PR #28](https://github.com/fivetran/dbt_tiktok_ads_source/pull/28) includes the following updates:
+
+## Breaking Changes
+
+
 # dbt_tiktok_ads_source v0.6.0
 [PR #23](https://github.com/fivetran/dbt_tiktok_ads_source/pull/23) includes the following **BREAKING CHANGE** updates:
 

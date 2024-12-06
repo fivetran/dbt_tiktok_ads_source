@@ -130,11 +130,6 @@ sources:
             description: The number of days of the time period to include action from.
           - name: adgroup_name
             description: Ad group name. Character limit is 512 and cannot contain emoji.
-          - name: age
-            description: >
-              Age groups you want to target. 
-              IMPORTANT: This field will not be populated for connectors utilizing the Tiktok Ads v1.3 API version, as the column was renamed. 
-              The new column name is `age_group`.
           - name: age_groups
             description: >
               Age groups you want to target.
