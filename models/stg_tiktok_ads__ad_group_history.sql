@@ -36,7 +36,7 @@ final as (
         action_days,
         action_categories,
         adgroup_name as ad_group_name,
-        coalesce(age_groups, age) as age_groups,
+        age_groups,
         audience_type,
         budget,
         category,
