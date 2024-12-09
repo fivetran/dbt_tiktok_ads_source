@@ -3,7 +3,7 @@
 
 ## Breaking Changes
 - In the [July 2023 TikTok Ads connector update](https://fivetran.com/docs/connectors/applications/tiktok-ads/changelog#july2023) for the `ADGROUP_HISTORY` table, the `age` column was renamed to `age_groups`.
-  - Previously, we coalesced these two columns in the `stg_tiktok_ads__ad_group_history` model to account for connectors using the old naming convention. However, due to inconsistent data types, we can no longer use this approach.
+  - Previously, we coalesced these two columns in the `stg_tiktok_ads__ad_group_history` model to account for connectors using the old naming convention. However, due to inconsistent data types (string and JSON), we can no longer use this approach.
   - As a result, the coalesced field has been removed in favor of the `age_groups` column.
   - If necessary, you can populate historical data in the `age_groups` column by performing a resync of the `ADGROUP_HISTORY` table, since TikTok provides all data regardless of the previous sync state.
   - For more details, see the [DECISIONLOG entry](https://github.com/fivetran/dbt_tiktok_ads_source/blob/main/DECISIONLOG.md#age_groups-and-age-columns).
