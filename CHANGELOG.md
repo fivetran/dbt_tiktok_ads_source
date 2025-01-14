@@ -1,3 +1,8 @@
+# dbt_tiktok_ads_source version.version
+
+## Documentation
+- Corrected references to connectors and connections in the README. ([#29](https://github.com/fivetran/dbt_tiktok_ads_source/pull/29))
+
 # dbt_tiktok_ads_source v0.7.0
 [PR #28](https://github.com/fivetran/dbt_tiktok_ads_source/pull/28) includes the following updates:
 
