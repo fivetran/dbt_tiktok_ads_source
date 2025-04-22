@@ -695,3 +695,75 @@ sources:
             description: The total value of purchase events that occurred in your app that were recorded by your measurement partner.
           - name: total_sales_lead_value
             description: The monetary worth or potential value assigned to a lead generated through ads.
+
+      - name: ad_country_report
+        identifier: "{{ var('tiktok_ads_ad_country_report_identifier', 'ad_country_report') }}"
+        description: Each record provides country-level reporting metrics at the ad level.
+        config:
+          enabled: "{{ var('ad_reporting__tiktok_ads_enabled', true) and var('tiktok_ads__using_ad_country_report', true) }}"
+        columns:
+          - name: _fivetran_synced
+            description: Timestamp indicating when the record was last synced.
+          - name: ad_id
+            description: Unique identifier of the ad.
+          - name: aeo_type
+            description: App Event Optimization type, representing the optimization goal for app-related events.
+          - name: clicks
+            description: Total number of times users clicked on the ad.
+          - name: conversion
+            description: Number of attributed conversions (e.g., purchases, sign-ups) based on TikTok's attribution window.
+          - name: conversion_rate
+            description: Ratio of conversions to impressions, calculated as conversions divided by impressions.
+          - name: cost_per_conversion
+            description: Average cost per conversion, calculated as spend divided by conversions.
+          - name: country_code
+            description: ISO 3166-1 alpha-2 country code indicating the user's country location.
+          - name: cpc
+            description: Cost per click, calculated as spend divided by the number of clicks.
+          - name: cpm
+            description: Cost per thousand impressions (CPM), calculated as spend divided by impressions and multiplied by 1000.
+          - name: ctr
+            description: Click-through rate, calculated as clicks divided by impressions.
+          - name: impressions
+            description: Total number of times the ad was shown.
+          - name: real_time_conversion
+            description: Real-time conversions tracked by TikTok.
+          - name: spend
+            description: Total spend in the account's currency for the ad.
+          - name: stat_time_day
+            description: The date for which the statistics are reported (in YYYY-MM-DD format).
+
+      - name: campaign_country_report
+        identifier: "{{ var('tiktok_ads_campaign_country_report_identifier', 'campaign_country_report') }}"
+        description: Each record provides country-level reporting metrics at the campaign level.
+        config:
+          enabled: "{{ var('ad_reporting__tiktok_ads_enabled', true) and var('tiktok_ads__using_campaign_country_report', true) }}"
+        columns:
+          - name: _fivetran_synced
+            description: Timestamp indicating when the record was last synced.
+          - name: campaign_id
+            description: Unique identifier of the campaign.
+          - name: clicks
+            description: Total number of times users clicked on ads within the campaign.
+          - name: conversion
+            description: Number of attributed conversions from ads in the campaign based on the TikTok attribution model.
+          - name: conversion_rate
+            description: Ratio of conversions to impressions, calculated as conversions divided by impressions.
+          - name: cost_per_conversion
+            description: Average cost per conversion, calculated as total spend divided by conversions.
+          - name: country_code
+            description: ISO 3166-1 alpha-2 country code indicating country location.
+          - name: cpc
+            description: Cost per click, calculated as spend divided by the number of clicks.
+          - name: cpm
+            description: Cost per thousand impressions, calculated as (spend / impressions) * 1000.
+          - name: ctr
+            description: Click-through rate, calculated as clicks divided by impressions.
+          - name: impressions
+            description: Total number of times ads in the campaign were shown.
+          - name: real_time_conversion
+            description: Number of real-time conversions tracked by TikTok.
+          - name: spend
+            description: Total amount spent for the campaign in the account currency.
+          - name: stat_time_day
+            description: The reporting date for the campaign data (in YYYY-MM-DD format).

@@ -41,7 +41,7 @@ If you  are **not** using the [Tiktok transformation package](https://github.com
 ```yaml
 packages:
   - package: fivetran/tiktok_ads_source
-    version: [">=0.7.0", "<0.8.0"]
+    version: [">=0.8.0", "<0.9.0"]
 ```
 
 ### Step 3: Define database and schema variables
@@ -69,6 +69,14 @@ vars:
 
 To connect your multiple schema/database sources to the package models, follow the steps outlined in the [Union Data Defined Sources Configuration](https://github.com/fivetran/dbt_fivetran_utils/tree/releases/v0.4.latest#union_data-source) section of the Fivetran Utils documentation for the union_data macro. This will ensure a proper configuration and correct visualization of connections in the DAG.
 
+#### Disable Country Reports
+This package leverages the `ad_country_report` and `campaign_country_report` to help report on ad and campaign performance by country. However, if you are not actively syncing these reports from your TikTok Ads connection, you may disable transformations of `ad_country_report` and `campaign_country_report` by adding the following variable configuration to your root `dbt_project.yml` file:
+```yml
+vars:
+    tiktok_ads__using_ad_country_report: False # True by default
+    tiktok_ads__using_campaign_country_report: False # True by default
+```
+
 #### Passing Through Additional Metrics
 By default, this package will select `clicks`, `impressions`,  `spend` , `conversion`, `real_time_conversion`, `total_purchase_value`, `total_sales_lead_value`, and [other](https://github.com/fivetran/dbt_tiktok_ads_source/tree/main/macros) metrics from the source reporting tables to store into the staging models. If you would like to pass through additional metrics to the staging models, add the below configurations to your `dbt_project.yml` file. These variables allow for the pass-through fields to be aliased (`alias`) if desired, but not required. Use the below format for declaring the respective pass-through variables:
 
@@ -76,12 +84,18 @@ By default, this package will select `clicks`, `impressions`,  `spend` , `conver
 
 ```yml
 vars:
+    tiktok_ads__ad_country_report_passthrough_metrics:
+      - name: "unique_string_field"
+        alias: "field_id"
     tiktok_ads__ad_group_hourly_passthrough_metrics: 
       - name: "new_custom_field"
         alias: "custom_field"
       - name: "my_other_field"
     tiktok_ads__ad_hourly_passthrough_metrics:
       - name: "this_field"
+    tiktok_ads__campaign_country_report_passthrough_metrics:
+      - name: "unique_string_field"
+        alias: "field_id"
     tiktok_ads__campaign_hourly_passthrough_metrics:
       - name: "unique_string_field"
         alias: "field_id"
