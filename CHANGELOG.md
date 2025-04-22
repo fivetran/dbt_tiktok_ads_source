@@ -1,18 +1,18 @@
-# dbt_tiktok_ads_source v0.8.8
+# dbt_tiktok_ads_source v0.8.0
 
 ## Schema Changes
-**4 total changes • 0 possible breaking changes
+**3 total changes • 0 possible breaking changes
 | Table/Column                                      | Change Type | Old Name | New Name                                  | Notes                                                             |
 |---------------------------------------------------|-------------|----------|-------------------------------------------|-------------------------------------------------------------------|
-| stg_tiktok_ads__ad_country_report_tmp             | New Model   |          | stg_tiktok_ads__ad_country_report_tmp     | Temp model added for `ad_country_report`.                     |
-| stg_tiktok_ads__ad_country_report                 | New Model   |          | stg_tiktok_ads__ad_country_report         | Staging model added for `ad_country_report`.               |
-| stg_tiktok_ads__campaign_country_report_tmp       | New Model   |          | stg_tiktok_ads__campaign_country_report_tmp | Temp model added for `campaign_country_report`.               |
-| stg_tiktok_ads__campaign_country_report           | New Model   |          | stg_tiktok_ads__campaign_country_report   | Staging model added for `campaign_country_report`.         |
+| stg_tiktok_ads__campaign_country_report_tmp       | New Model   |          |  | Temp model added for `campaign_country_report`.               |
+| stg_tiktok_ads__campaign_country_report           | New Model   |          |    | Staging model added for `campaign_country_report`.         |
+| objective_type, status, budget, budget_mode, created_at, is_new_structure           | New Columns   |          |    | New columns added to the stg_tiktok_ads__campaign_history model.         |
 
 ## Feature Updates
-- Added the `ad_country_report` and `campaign_country_report` source tables and downstream staging models. See above for schema change details and new models added.
-  - For dbt Core users: If you do not sync these tables or would like disable these new models you can disable the models by setting the `tiktok_ads__using_ad_country_report` and `tiktok_ads__using_campaign_country_report` variables to `false` in your `dbt_project.yml` file (`true` by default).
-- Included the `tiktok_ads__ad_country_report_passthrough_metrics` and `tiktok_ads__campaign_country_report_passthrough_metrics` passthrough variables in the above mentioned new staging models. Refer to the [README](https://github.com/fivetran/dbt_tiktok_ads_source/tree/main?tab=readme-ov-file#passing-through-additional-metrics) for more details.
+- Added the `campaign_country_report` source table and downstream staging models. See above for schema change details and new models added.
+  - For dbt Core users: If you do not sync these tables or would like disable these new models you can disable the models by setting the  `tiktok_ads__using_campaign_country_report` variable to `false` in your `dbt_project.yml` file (`true` by default).
+- Included the `tiktok_ads__campaign_country_report_passthrough_metrics` passthrough variable in the above mentioned new staging models. Refer to the [README](https://github.com/fivetran/dbt_tiktok_ads_source/tree/main?tab=readme-ov-file#passing-through-additional-metrics) for more details.
+- Introduced the above mentioned new columns to the `stg_tiktok_ads__campaign_history` model.
 
 ## Documentation
 - Corrected references to connectors and connections in the README. ([#29](https://github.com/fivetran/dbt_tiktok_ads_source/pull/29))
