@@ -715,7 +715,7 @@ sources:
           - name: cost_per_conversion
             description: Average cost per conversion, calculated as total spend divided by conversions.
           - name: country_code
-            description: ISO 3166-1 alpha-2 country code indicating country location.
+            description: Audience country or region code.
           - name: cpc
             description: Cost per click, calculated as spend divided by the number of clicks.
           - name: cpm

@@ -463,7 +463,7 @@ models:
       - name: cost_per_result
         description: Average cost per result, calculated as spend divided by result.
       - name: country_code
-        description: ISO 3166-1 alpha-2 country code indicating country location.
+        description: Audience country or region code.
       - name: cpc
         description: Cost per click, calculated as spend divided by the number of clicks.
       - name: cpm
