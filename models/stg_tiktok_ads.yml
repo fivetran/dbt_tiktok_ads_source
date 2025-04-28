@@ -447,9 +447,10 @@ models:
             - source_relation
             - campaign_id
             - stat_time_day
+            - country_code
     columns:
-          - name: source_relation
-            description: "{{ doc('source_relation') }}"
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: _fivetran_synced
         description: Timestamp indicating when the record was last synced.
       - name: campaign_id
@@ -462,8 +463,6 @@ models:
         description: Ratio of conversions to impressions, calculated as conversions divided by impressions.
       - name: cost_per_conversion
         description: Average cost per conversion, calculated as total spend divided by conversions.
-      - name: cost_per_result
-        description: Average cost per result, calculated as spend divided by result.
       - name: country_code
         description: Audience country or region code.
       - name: cpc
@@ -476,20 +475,6 @@ models:
         description: Total number of times ads in the campaign were shown.
       - name: real_time_conversion
         description: Number of real-time conversions tracked by TikTok.
-      - name: real_time_conversion_rate
-        description: Real-time conversion rate calculated as real-time conversions divided by impressions.
-      - name: real_time_cost_per_conversion
-        description: Real-time cost per conversion, calculated using real-time conversion metrics.
-      - name: real_time_cost_per_result
-        description: Real-time cost per result based on real-time performance data.
-      - name: real_time_result
-        description: Number of real-time results achieved by ads in the campaign, such as app installs or purchases.
-      - name: real_time_result_rate
-        description: Real-time result rate calculated as real-time results divided by impressions.
-      - name: result
-        description: Number of results achieved from the campaign optimization goal (e.g., conversions, views).
-      - name: result_rate
-        description: Result rate calculated as results divided by impressions.
       - name: spend
         description: Total amount spent for the campaign in the account currency.
       - name: stat_time_day
