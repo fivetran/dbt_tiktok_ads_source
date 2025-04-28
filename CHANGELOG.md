@@ -4,11 +4,11 @@
 
 ## Schema Changes
 **3 total changes • 0 possible breaking changes**
-| Table/Column                                      | Change Type | Old Name | New Name                                  | Notes                                                             |
+| Data Model                                     | Change Type | Old Name | New Name                                  | Notes                                                             |
 |---------------------------------------------------|-------------|----------|-------------------------------------------|-------------------------------------------------------------------|
 | [stg_tiktok_ads__campaign_country_report_tmp](https://fivetran.github.io/dbt_tiktok_ads_source/#!/model/model.tiktok_ads_source.stg_tiktok_ads__campaign_country_report_tmp)       | New Model   |          |  | Temp model added for `campaign_country_report`.               |
 | [stg_tiktok_ads__campaign_country_report](https://fivetran.github.io/dbt_tiktok_ads_source/#!/model/model.tiktok_ads_source.stg_tiktok_ads__campaign_country_report)           | New Model   |          |    | Staging model added for `campaign_country_report`.         |
-| [stg_tiktok_ads__campaign_history](https://fivetran.github.io/dbt_tiktok_ads/#!/model/model.tiktok_ads_source.stg_tiktok_ads__campaign_history)           | New Columns   |          | `objective_type`, `status`, `budget`, `budget_mode`, `created_at`, `is_new_structure`   | New columns added to the [stg_tiktok_ads__campaign_history](https://fivetran.github.io/dbt_tiktok_ads_source/#!/model/model.tiktok_ads_source.stg_tiktok_ads__campaign_history) model.         |
+| [stg_tiktok_ads__campaign_history](https://fivetran.github.io/dbt_tiktok_ads/#!/model/model.tiktok_ads_source.stg_tiktok_ads__campaign_history)           | New Columns   |          | `objective_type`, `status`, `budget`, `budget_mode`, `created_at`, `is_new_structure`   |      |
 
 ## Feature Updates
 - Added the `campaign_country_report` source table and downstream staging models. See above for schema change details and new models added.
