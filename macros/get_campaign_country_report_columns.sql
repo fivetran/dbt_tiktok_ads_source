@@ -16,6 +16,7 @@
     {"name": "spend", "datatype": dbt.type_float()},
     {"name": "stat_time_day", "datatype": "datetime"}
 ] %}
+{{ tiktok_ads_add_pass_through_columns(base_columns=columns, pass_through_fields=var('tiktok_ads__campaign_country_report_passthrough_metrics')) }}
 
 {{ return(columns) }}
 

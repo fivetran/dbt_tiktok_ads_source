@@ -182,7 +182,7 @@ models:
       - name: campaign_type
         description: Campaign Type, indicates the campaign is a regular campaign or iOS 14 campaign.
       - name: split_test_variable
-        description: Split Test variables. Optional values; TARGETING, BIDDING_OPTIMIZATION , CREATIVE.
+        description: Split Test variables. Optional values; TARGETING, BIDDING_OPTIMIZATION, CREATIVE.
       - name: budget
         description: Campaign budget
       - name: budget_mode
@@ -448,6 +448,8 @@ models:
             - campaign_id
             - stat_time_day
     columns:
+          - name: source_relation
+            description: "{{ doc('source_relation') }}"
       - name: _fivetran_synced
         description: Timestamp indicating when the record was last synced.
       - name: campaign_id

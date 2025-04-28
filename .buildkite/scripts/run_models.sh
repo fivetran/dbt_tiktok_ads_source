@@ -19,6 +19,6 @@ dbt deps
 dbt seed --target "$db" --full-refresh
 dbt run --target "$db" --full-refresh
 dbt test --target "$db"
-dbt run --vars '{tiktok_ads__using_ad_country_report: false, tiktok_ads__using_campaign_country_report: false}' --target "$db" --full-refresh
+dbt run --vars '{tiktok_ads__using_campaign_country_report: false}' --target "$db" --full-refresh
 dbt test --target "$db"
 dbt run-operation fivetran_utils.drop_schemas_automation --target "$db"
