@@ -28,7 +28,7 @@ final as (
 
     select
         campaign_id,
-        stat_time_day,
+        cast(stat_time_day as date) as stat_time_day,
         country_code,
         coalesce(clicks, 0) as clicks,
         coalesce(impressions, 0) as impressions,
