@@ -34,6 +34,12 @@ final as (
         campaign_name,
         campaign_type,
         split_test_variable,
+        objective_type,
+        status,
+        budget,
+        budget_mode,
+        create_time as created_at,
+        is_new_structure,
         row_number() over (partition by source_relation, campaign_id order by updated_at desc) = 1 as is_most_recent_record
     from fields
 )

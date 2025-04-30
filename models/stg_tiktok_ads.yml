@@ -182,10 +182,23 @@ models:
       - name: campaign_type
         description: Campaign Type, indicates the campaign is a regular campaign or iOS 14 campaign.
       - name: split_test_variable
-        description: Split Test variables. Optional values; TARGETING, BIDDING_OPTIMIZATION , CREATIVE.
+        description: Split Test variables. Optional values; TARGETING, BIDDING_OPTIMIZATION, CREATIVE.
+      - name: budget
+        description: Campaign budget
+      - name: budget_mode
+        description: Budget type
+      - name: created_at
+        description: Time at which the campaign was created.
+      - name: is_new_structure
+        description: Whether the campaign is a new structure (for the same campaign, the structure of campaign, adgroups and ads are the same)
+      - name: objective_type
+        description: Advertising objective.
+      - name: opt_status
+        description: Operation status. 
+      - name: status
+        description: Campaign status.
       - name: is_most_recent_record
         description: Whether record is the most recent one for this particular grain.
-          
 
   - name: stg_tiktok_ads__ad_report_hourly
     description: Each record represents data for each ad for each hour.
@@ -425,3 +438,44 @@ models:
         description: The total value of purchase events that occurred in your app that were recorded by your measurement partner.
       - name: total_sales_lead_value
         description: The monetary worth or potential value assigned to a lead generated through ads.
+
+  - name: stg_tiktok_ads__campaign_country_report
+    description: Each record provides country-level reporting metrics at the campaign level.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - source_relation
+            - campaign_id
+            - stat_time_day
+            - country_code
+    columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
+      - name: _fivetran_synced
+        description: Timestamp indicating when the record was last synced.
+      - name: campaign_id
+        description: Unique identifier of the campaign.
+      - name: clicks
+        description: Total number of times users clicked on ads within the campaign.
+      - name: conversion
+        description: Number of attributed conversions from ads in the campaign based on the TikTok attribution model.
+      - name: conversion_rate
+        description: Ratio of conversions to impressions, calculated as conversions divided by impressions.
+      - name: cost_per_conversion
+        description: Average cost per conversion, calculated as total spend divided by conversions.
+      - name: country_code
+        description: Audience country or region code.
+      - name: cpc
+        description: Cost per click, calculated as spend divided by the number of clicks.
+      - name: cpm
+        description: Cost per thousand impressions, calculated as (spend / impressions) * 1000.
+      - name: ctr
+        description: Click-through rate, calculated as clicks divided by impressions.
+      - name: impressions
+        description: Total number of times ads in the campaign were shown.
+      - name: real_time_conversion
+        description: Number of real-time conversions tracked by TikTok.
+      - name: spend
+        description: Total amount spent for the campaign in the account currency.
+      - name: stat_time_day
+        description: The reporting date for the campaign data (in YYYY-MM-DD format).
