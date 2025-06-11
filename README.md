@@ -41,7 +41,7 @@ If you  are **not** using the [Tiktok transformation package](https://github.com
 ```yaml
 packages:
   - package: fivetran/tiktok_ads_source
-    version: [">=0.8.0", "<0.9.0"]
+    version: [">=0.9.0", "<0.10.0"]
 ```
 
 ### Step 3: Define database and schema variables
