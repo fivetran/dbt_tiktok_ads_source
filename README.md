@@ -5,7 +5,7 @@
         href="https://github.com/fivetran/dbt_tiktok_ads_source/blob/main/LICENSE">
         <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
     <a alt="dbt-core">
-        <img src="https://img.shields.io/badge/dbt_Core™_version->=1.3.0_<2.0.0-orange.svg" /></a>
+        <img src="https://img.shields.io/badge/dbt_Core™_version->=1.3.0_,<2.0.0-orange.svg" /></a>
     <a alt="Maintained?">
         <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" /></a>
     <a alt="PRs">
@@ -20,7 +20,6 @@
   - Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
 - Generates a comprehensive data dictionary of your Tiktok Ads data through the [dbt docs site](https://fivetran.github.io/dbt_tiktok_ads_source/).
 - These tables are designed to work simultaneously with our [Tiktok Ads transformation package](https://github.com/fivetran/dbt_tiktok_ads).
-
 
 ## How do I use the dbt package?
 ### Step 1: Prerequisites
@@ -110,7 +109,7 @@ models:
 #### Change the source table references
 If an individual source table has a different name than the package expects, add the table name as it appears in your destination to the respective variable. This is not available when running the package on multiple unioned connections.
 > IMPORTANT: See this project's [`dbt_project.yml`](https://github.com/fivetran/dbt_tiktok_ads_source/blob/main/dbt_project.yml) variable declarations to see the expected names.
-    
+
 ```yml
 vars:
     tiktok_ads_<default_source_table_name>_identifier: your_table_name 
@@ -140,7 +139,7 @@ packages:
     - package: dbt-labs/spark_utils
       version: [">=0.3.0", "<0.4.0"]
 ```
-          
+
 ## How is this package maintained and can I contribute?
 ### Package Maintenance
 The Fivetran team maintaining this package _only_ maintains the latest version of the package. We highly recommend that you stay consistent with the [latest version](https://hub.getdbt.com/fivetran/tiktok_ads_source/latest/) of the package and refer to the [CHANGELOG](https://github.com/fivetran/dbt_tiktok_ads_source/blob/main/CHANGELOG.md) and release notes for more information on changes across versions.
